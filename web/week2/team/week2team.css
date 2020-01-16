@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Lobster|Pacifico&display=swap');
+
+div.div1 {
+  padding: 10px;
+  margin: auto;
+  height: 50px;
+  width: 50%;
+  background-color: red;
+  font-size: 14px;
+  font-family: 'Lobster',
+  cursive;
+}
+div.div2 {
+  padding: 10px;
+  margin: auto;
+  height: 50px;
+  width: 50%;
+  background-color: green;
+  font-size: 10px;
+  font-family: 'Fjalla One',
+  sans-serif;
+}
+div.div3 {
+  padding: 10px;
+  margin: auto;
+  height: 50px;
+  width: 50%;
+  background-color: blue;
+  font-size: 18px;
+  font-family: 'Pacifico',
+  cursive;
+}
+
+div.bold:hover {
+  font-weight: bold;
+}
