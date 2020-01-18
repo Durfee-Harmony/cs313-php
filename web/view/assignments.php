@@ -16,19 +16,21 @@
     <nav>
       <ul>
         <li><a href="../index.php">Home</a></li>
-        <li><a href="../index.php?action=myA">My Assignments</a></li>
+        <li><a href="../index.php?action=mineA">My Assignments</a></li>
         <li><a href="../index.php?action=teamA">Team Assignments</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <?php if($a == 'my'){include '../assignments/';} ?>
+    <div id="<?php echo $a; ?>">
+      <p>List of assignments:</p>
+    </div>
   </main>
   <footer>
     <nav>
       <ul>
         <li><a href="../index.php">Home</a></li>
-        <li><a href="../index.php?action=myA">My Assignments</a></li>
+        <li><a href="../index.php?action=mineA">My Assignments</a></li>
         <li><a href="../index.php?action=teamA">Team Assignments</a></li>
       </ul>
     </nav>
