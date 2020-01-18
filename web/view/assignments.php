@@ -10,12 +10,7 @@
 </head>
 
 <body>
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/web/view/header.php'; ?>
-  <main>
-    <a href='/acme/accounts/index.php?action=update' class="button">Update</a>
-  </main>
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/web/view/footer.php'; ?>
-
+  <h1>Assignments Page</h1>
 </body>
 
 </html>
