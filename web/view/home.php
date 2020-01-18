@@ -22,7 +22,10 @@
     </nav>
   </header>
   <main>
-    <a href='/acme/accounts/index.php?action=update' class="button">Update</a>
+    <div id="about">
+      <p>This is the paragraph introducing me.</p>
+      <a href='/acme/accounts/index.php?action=update' class="button">Update</a>
+    </div>
   </main>
   <footer>
     <nav>

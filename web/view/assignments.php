@@ -10,7 +10,29 @@
 </head>
 
 <body>
-  <h1>Assignments Page</h1>
+  <header>
+    <img id="logo" src="../media/logo.jpg" alt="logo">
+    <h1 class="title">Web Engineering 2 - Harmony</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.php">Home</a></li>
+        <li><a href="../index.php?action=myA">My Assignments</a></li>
+        <li><a href="../index.php?action=teamA">Team Assignments</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <?php if($a == 'my'){include '../assignments/';} ?>
+  </main>
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="../index.php">Home</a></li>
+        <li><a href="../index.php?action=myA">My Assignments</a></li>
+        <li><a href="../index.php?action=teamA">Team Assignments</a></li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 
 </html>
