@@ -10,11 +10,11 @@
 </head>
 
 <body>
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/web/view/header.php'; ?>
+  <?php include '../view/header.php'; ?>
   <main>
     <a href='/acme/accounts/index.php?action=update' class="button">Update</a>
   </main>
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/web/view/footer.php'; ?>
+  <?php include '../view/footer.php'; ?>
 
 </body>
 
