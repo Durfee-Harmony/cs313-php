@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Laila|Poppins');
 
+html {
+  background-color: #415a77;
+}
+
 body {
   background-color: white;
   padding: 5px 25px;
