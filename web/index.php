@@ -6,6 +6,8 @@ if ($action == NULL) {
 }
 if($action == 'myA') {
   include 'view/assignments.php';
+} else {
+  include 'view/home.php';
 }
 
 ?>
