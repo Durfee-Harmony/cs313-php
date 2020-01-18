@@ -23,7 +23,8 @@
   </header>
   <main>
     <div id="about">
-      <p>This is the paragraph introducing me.</p>
+      <h2>Introduction:</h2>
+      <p>I don't want any real information about me on here, so I'm going to talk about something else. One of my favorite shows is Doctor Who. The main reason for this is the concept of being able to completely reinvent the show every few years. Whenever the show gets a new Doctor, they have to find a slightly different approach to everything within the world. Some of the Doctor's are extremely grumpy, others are childlike. The show is so much more interesting just because it's never the same twice. That being said, I have not loved the latest season simply because the story has gone downhill. Each other season has something fun and interesting about it, but this one is just so bland. Most of the actors are amazing, but the character development is so dull that the interest just isn't there.</p>
     </div>
   </main>
   <footer>
