@@ -11,7 +11,7 @@
 
 <body>
   <header>
-    <img id="logo" src="../media/logo.png" alt="logo">
+    <img id="logo" src="../media/logo.jpg" alt="logo">
     <h1 class="title">Web Engineering 2 - Harmony</h1>
     <nav>
       <ul>
