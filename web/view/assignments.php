@@ -23,9 +23,7 @@
   </header>
   <main>
     <div id="<?php echo $a; ?>">
-      <p>List of assignments:</p>
-      <?php echo '../assignments/week1/'; ?>
-      <a href="../assignments/week1/">Week 1 Assignments</a>
+      <h2>List of assignments:</h2>
     </div>
   </main>
   <footer>
