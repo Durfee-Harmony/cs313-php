@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <?php include '../view/header.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/Users/harmo/Desktop/BYU-Idaho/Winter%202020/Web%Engineering/cs313-php/web/view/header.php'; ?>
   <main>
     <a href='/acme/accounts/index.php?action=update' class="button">Update</a>
   </main>
