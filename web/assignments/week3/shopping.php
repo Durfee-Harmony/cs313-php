@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Assignment - Shopping Cart</title>
   <meta name="viewport" content="width=device-width">
-  <link href="../styles.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="../../styles.css" rel="stylesheet" type="text/css" media="screen">
   <meta name="viewport" content="width=device-width">
 </head>
 
@@ -22,8 +22,9 @@
     </nav>
   </header>
   <main>
-    <div id="<?php echo $a; ?>">
-      <h2>List of assignments:</h2>
+    <div>
+      <h1>Products:</h1>
+      <img src="../../media/products/anvil.png" alt="anvil">
     </div>
   </main>
   <footer>
