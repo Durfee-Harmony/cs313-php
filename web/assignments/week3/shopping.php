@@ -11,28 +11,29 @@
 
 <body>
   <header>
-    <img id="logo" src="../media/logo.jpg" alt="logo">
+    <img id="logo" src="../../media/logo.jpg" alt="logo">
     <h1 class="title">Assignment - Shopping Cart</h1>
     <nav>
       <ul>
-        <li><a href="../index.php">Home</a></li>
-        <li><a href="../index.php?action=mineA">My Assignments</a></li>
-        <li><a href="../index.php?action=teamA">Team Assignments</a></li>
+        <li><a href="../../index.php">Home</a></li>
+        <li><a href="../../index.php?action=mineA">My Assignments</a></li>
+        <li><a href="../../index.php?action=teamA">Team Assignments</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <div>
       <h1>Products:</h1>
-      <img src="../../media/products/anvil.png" alt="anvil">
+      <img src="../../media/products/anvil.png" alt="anvil" width="100%">
+      <img src="../../media/products/helmet.png" alt="helmet" width="100%">
     </div>
   </main>
   <footer>
     <nav>
       <ul>
-        <li><a href="../index.php">Home</a></li>
-        <li><a href="../index.php?action=mineA">My Assignments</a></li>
-        <li><a href="../index.php?action=teamA">Team Assignments</a></li>
+        <li><a href="../../index.php">Home</a></li>
+        <li><a href="../../index.php?action=mineA">My Assignments</a></li>
+        <li><a href="../../index.php?action=teamA">Team Assignments</a></li>
       </ul>
     </nav>
   </footer>
