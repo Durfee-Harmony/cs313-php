@@ -109,6 +109,10 @@ main #intro {
   margin: 0 auto 0 auto;
 }
 
+#products {
+  display: inline-flex;
+}
+
 footer {
   padding: 0;
   text-align: center;
