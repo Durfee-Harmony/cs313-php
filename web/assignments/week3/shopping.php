@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Web Engineering 2 - Assignments</title>
+  <title>Assignment - Shopping Cart</title>
   <meta name="viewport" content="width=device-width">
   <link href="../styles.css" rel="stylesheet" type="text/css" media="screen">
   <meta name="viewport" content="width=device-width">
@@ -12,7 +12,7 @@
 <body>
   <header>
     <img id="logo" src="../media/logo.jpg" alt="logo">
-    <h1 class="title">Web Engineering 2 - Harmony</h1>
+    <h1 class="title">Assignment - Shopping Cart</h1>
     <nav>
       <ul>
         <li><a href="../index.php">Home</a></li>
@@ -24,9 +24,6 @@
   <main>
     <div id="<?php echo $a; ?>">
       <h2>List of assignments:</h2>
-      <ul>
-        <li><a href="../assignments/week3/shopping.php">Shopping Cart Project</a></li>
-      </ul>
     </div>
   </main>
   <footer>
