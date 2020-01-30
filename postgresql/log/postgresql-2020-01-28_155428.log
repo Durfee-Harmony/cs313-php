@@ -1,0 +1,7 @@
+2020-01-28 15:54:28.772 MST [18360] LOG:  database system was shut down at 2020-01-28 15:54:21 MST
+2020-01-28 15:54:28.857 MST [23704] LOG:  database system is ready to accept connections
+2020-01-28 15:55:50.585 MST [23704] LOG:  received fast shutdown request
+2020-01-28 15:55:50.592 MST [23704] LOG:  aborting any active transactions
+2020-01-28 15:55:50.612 MST [23704] LOG:  background worker "logical replication launcher" (PID 2676) exited with exit code 1
+2020-01-28 15:55:50.631 MST [13388] LOG:  shutting down
+2020-01-28 15:55:50.736 MST [23704] LOG:  database system is shut down
