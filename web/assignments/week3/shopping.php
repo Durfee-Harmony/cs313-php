@@ -22,17 +22,7 @@
     </nav>
   </header>
   <main>
-    <div id="products">
-      <h1>Products:</h1>
-      <img src="../../media/products/anvil.png" alt="anvil" width="100px">
-      <button type="button" onclick="">Add</button>
-      <img src="../../media/products/mallet.png" alt="mallet" width="100px">
-      <img src="../../media/products/mortar.jpg" alt="mortar" width="100px">
-      <img src="../../media/products/piano.jpg" alt="piano" width="100px">
-      <img src="../../media/products/rocket.png" alt="rocket" width="100px">
-      <img src="../../media/products/rope.jpg" alt="rope" width="100px">
-      <img src="../../media/products/trap.jpg" alt="trap" width="100px">
-    </div>
+    <?php echo browse();?>
   </main>
   <footer>
     <nav>

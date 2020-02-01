@@ -25,7 +25,7 @@
     <div id="<?php echo $a; ?>">
       <h2>List of assignments:</h2>
       <ul>
-        <li><a href="../assignments/week3/shopping.php">Shopping Cart Project</a></li>
+        <li><a href="../assignments/week3/shop.php">Shopping Cart Project</a></li>
       </ul>
     </div>
   </main>
