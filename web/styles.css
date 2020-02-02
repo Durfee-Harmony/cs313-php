@@ -114,8 +114,21 @@ main #intro {
 }
 
 #cart {
-  align-self: center;
-  max-height: inherit;
+  align-items: center;
+  max-height: 100px;
+}
+
+a.button {
+  text-decoration: none;
+  color: #202a25;
+  background-color: #d1d1d1;
+  text-align: center;
+  display: inline-block;
+}
+
+a.button:hover {
+  color: #6D8DA0;
+  background-color: #415a77;
 }
 
 footer {

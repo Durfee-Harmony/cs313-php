@@ -14,7 +14,7 @@ function browse() {
   $browse .= "<h1>Products:</h1>";
   for($i=0; $i<5; $i++){
     $browse .= '<img src="../../media/products/' . $products[$i] . '.jpg" alt="' . $products[$i] . '" width="100px">';
-    $browse .= '<a href="shop.php?action=add&item=' . $products[$i] . '">Add ' . $products[$i] . ' to Cart</a>';
+    $browse .= '<a class="button" href="shop.php?action=add&item=' . $products[$i] . '">Add ' . $products[$i] . ' to Cart</a>';
   }
   $browse .= '</div>';
   return $browse;
@@ -24,7 +24,7 @@ function browse() {
 function add($product) {
   global $cart;
   $cart .= '<img src="../../media/products/' . $product . '.jpg" alt="' . $product . '" width="100px">';
-  $cart .= '<a href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
+  $cart .= '<a class="button" href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
   echo 'add function: ';
   var_dump($cart);
 }
@@ -32,7 +32,7 @@ function add($product) {
 function remove($product) {
   global $cart;
   $cart -= '<img src="../../media/products/' . $product . '.jpg" alt="' . $product . '" width="100px">';
-  $cart -= '<a href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
+  $cart -= '<a class="button" href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
   echo 'remove function: ';
   var_dump($cart);
 }
