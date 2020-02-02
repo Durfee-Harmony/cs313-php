@@ -24,12 +24,12 @@ function browse() {
 function add($product) {
   global $cart, $x;
   var_dump($x);
+  $x = count($cart);
   if($x == NULL){
     $cart[0] = $product;
   } else {
     $cart[$x] = $product;
   }
-  $x++;
   echo 'add function';
   var_dump($x);
 }
