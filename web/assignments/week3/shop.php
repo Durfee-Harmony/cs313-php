@@ -5,7 +5,7 @@ if ($action == NULL) {
 }
 $shop;
 $check = NULL;
-$cart;
+$cart = array();
 $x;
 
 function browse() {
@@ -21,22 +21,23 @@ function browse() {
   echo 'browse';
 }
 
-function add($product) {
+function add($item) {
   global $cart, $x;
   var_dump($x);
   $x = count($cart);
   if($x == NULL){
-    $cart[0] = $product;
+    $cart[0] = $item;
   } else {
-    $cart[$x] = $product;
+    $cart[$x] = $item;
   }
   echo ' add function ';
   var_dump($x);
+  var_dump($cart);
 }
 
-function remove($product) {
+function remove($item) {
   global $cart, $x;
-  $cart[$x] = $product;
+  $cart[$x] = $item;
   $x++;
   echo 'remove function';
 }
