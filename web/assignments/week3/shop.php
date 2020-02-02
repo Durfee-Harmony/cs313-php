@@ -1,10 +1,12 @@
 <?php
-$action = filter_input(INPUT_POST, 'action');
-if ($action == NULL) {
-  $action = filter_input(INPUT_GET, 'action');
-}
-
+// $action = filter_input(INPUT_POST, 'action');
+// if ($action == NULL) {
+//   $action = filter_input(INPUT_GET, 'action');
+// }
+$action = NULL;
 $shop;
+$check = NULL;
+$cart = '<div id="cart"><h1>Cart:</h1>';
 
 function browse() {
   $products = array(0 => "anvil", 1 => "mallet", 2 => "piano", 3 => "rope", 4 => "trap");
@@ -17,8 +19,6 @@ function browse() {
   $browse .= '</div>';
   return $browse;
 }
-
-$cart = '<div id="cart"><h1>Cart:</h1>';
 
 function add($product) {
   global $cart;
@@ -47,12 +47,12 @@ if ($action == "add") {
 $cart .= '</div>';
 
 function cart() {
-  global $cart;
+  global $cart, $check;
+  $check = 1;
   $shop = $cart;
   include 'shopping.php';
 }
 
-$check = NULL;
 if ($check == NULL) {
   $shop = browse();
   include 'shopping.php';
