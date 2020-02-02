@@ -113,6 +113,10 @@ main #intro {
   display: inline-flex;
 }
 
+#cart {
+  align-self: center;
+}
+
 footer {
   padding: 0;
   text-align: center;
