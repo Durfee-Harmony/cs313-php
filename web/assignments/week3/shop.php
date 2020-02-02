@@ -6,7 +6,7 @@ if ($action == NULL) {
 $shop;
 $check = NULL;
 $cart = array();
-$x;
+$x = 0;
 
 function browse() {
   $products = array(0 => "anvil", 1 => "mallet", 2 => "piano", 3 => "rope", 4 => "trap");
@@ -68,8 +68,6 @@ if ($action == "add") {
 }
 
 if ($check == NULL) {
-  global $x;
-  $x = 0;
   $shop = browse();
   echo 'before include';
   include 'shopping.php';
