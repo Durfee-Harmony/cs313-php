@@ -24,26 +24,12 @@ function add($product) {
   global $cart;
   $cart .= '<img src="../../media/products/' . $product . '.jpg" alt="' . $product . '" width="100px">';
   $cart .= '<a class="button" href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
-  echo 'add function: ';
-  var_dump($cart);
 }
 
 function remove($product) {
   global $cart;
   $cart -= '<img src="../../media/products/' . $product . '.jpg" alt="' . $product . '" width="100px">';
   $cart -= '<a class="button" href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
-  echo 'remove function: ';
-  var_dump($cart);
-}
-
-if ($action == "add") {
-  $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_STRING);
-  add($item);
-  echo 'add';
-} else if ($action == "remove") {
-  $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_STRING);
-  remove($item);
-  echo 'remove';
 }
 
 $cart .= '</div>';
@@ -53,6 +39,18 @@ function cart() {
   $shop = $cart;
   echo 'cart';
   include 'shopping.php';
+}
+
+if ($action == "add") {
+  $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_STRING);
+  add($item);
+  echo 'add' . $item;
+} else if ($action == "remove") {
+  $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_STRING);
+  remove($item);
+  echo 'remove' . $item;
+} else if ($action == "cart") {
+  cart();
 }
 
 if ($check == NULL) {
