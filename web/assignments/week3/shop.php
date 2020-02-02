@@ -24,6 +24,7 @@ function add($product) {
   global $cart;
   $cart .= '<img src="../../media/products/' . $product . '.jpg" alt="' . $product . '" width="100px">';
   $cart .= '<a class="button" href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
+  echo 'add';
 }
 
 function remove($product) {
