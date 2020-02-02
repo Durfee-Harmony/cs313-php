@@ -112,7 +112,8 @@ main #intro {
 #products {
   display: grid;
   justify-items: center;
-  grid: 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
 }
 
 #cart {
