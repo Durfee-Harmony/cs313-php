@@ -44,11 +44,11 @@ function cart() {
 }
 
 if ($action == "add") {
-  $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_STRING);
+  $item = filter_input(INPUT_GET, 'item', FILTER_SANITIZE_STRING);
   add($item);
   echo 'add ' . $item;
 } else if ($action == "remove") {
-  $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_STRING);
+  $item = filter_input(INPUT_GET, 'item', FILTER_SANITIZE_STRING);
   remove($item);
   echo 'remove ' . $item;
 } else if ($action == "cart") {
