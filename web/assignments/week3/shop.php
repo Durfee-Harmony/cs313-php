@@ -5,7 +5,8 @@ if ($action == NULL) {
 }
 $shop;
 $check = NULL;
-$cart = '<div id="cart"><h1>Cart:</h1>';
+$cart = array();
+$x = 0;
 
 function browse() {
   $products = array(0 => "anvil", 1 => "mallet", 2 => "piano", 3 => "rope", 4 => "trap");
@@ -21,26 +22,32 @@ function browse() {
 }
 
 function add($product) {
-  global $cart;
-  $cart .= '<img src="../../media/products/' . $product . '.jpg" alt="' . $product . '" width="100px">';
-  $cart .= '<a class="button" href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
+  global $cart, $x;
+  $cart[$x] = $product;
+  $x++;
   echo 'add function';
 }
 
 function remove($product) {
-  global $cart;
-  $cart -= '<img src="../../media/products/' . $product . '.jpg" alt="' . $product . '" width="100px">';
-  $cart -= '<a class="button" href="shop.php?action=remove&item=' . $product . '">Remove ' . $product . ' from Cart</a>';
+  global $cart, $x;
+  $cart[$x] = $product;
+  $x++;
+  echo 'remove function';
 }
 
-$cart .= '</div>';
 function cart() {
-  global $cart, $check;
-  $check = 1;
-  $shop = $cart;
+  global $cart;
+  $c = '<div id="cart"><h1>Cart:</h1>';
+  for ($i=0; $i<count($cart); $i++){
+    $c .= '<img src="../../media/products/' . '.jpg" alt="' . '" width="100px">';
+    $c .= '<a class="button" href="shop.php?action=add&item=' . '">Add ' . ' to Cart</a>';
+    echo 'cart for loop';
+  }
+  $c .= '</div>';
+
   echo 'cart function';
-  var_dump($cart);
-  include 'shopping.php';
+  var_dump($c);
+  return $c;
 }
 
 if ($action == "add") {
@@ -52,7 +59,10 @@ if ($action == "add") {
   remove($item);
   echo 'remove ' . $item;
 } else if ($action == "cart") {
-  cart();
+  global $check;
+  $check = 1;
+  $shop = cart();
+  include 'shopping.php';
 }
 
 if ($check == NULL) {
