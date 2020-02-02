@@ -6,9 +6,11 @@ if ($action == NULL) {
 $shop;
 $check = NULL;
 $cart = array();
-$x = 0;
+$x;
 
 function browse() {
+  global $x;
+  $x = 0;
   $products = array(0 => "anvil", 1 => "mallet", 2 => "piano", 3 => "rope", 4 => "trap");
   $browse = '<h1>Products:</h1>';
   $browse .= '<div id="products">';
@@ -23,9 +25,11 @@ function browse() {
 
 function add($product) {
   global $cart, $x;
+  var_dump($x);
   $cart[$x] = $product;
   $x++;
   echo 'add function';
+  var_dump($x);
 }
 
 function remove($product) {
