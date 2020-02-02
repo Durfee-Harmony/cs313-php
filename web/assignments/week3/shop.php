@@ -83,7 +83,5 @@ if ($action == "add") {
 
 if ($check == NULL) {
   $shop = browse();
-  echo 'before include';
   include 'shopping.php';
-  echo 'check';
 }
