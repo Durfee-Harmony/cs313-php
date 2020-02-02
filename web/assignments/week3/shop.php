@@ -23,8 +23,12 @@ function browse() {
 
 function add($item) {
   global $cart, $x;
+  echo 'x before: ';
   var_dump($x);
   $x = count($cart);
+  echo ' x count: ';
+  var_dump($x);
+  $x++;
   if($x == NULL){
     $cart[0] = $item;
     echo ' null ';
@@ -33,6 +37,7 @@ function add($item) {
     echo ' zero ';
   }
   echo ' add function ';
+  echo ' x after: ';
   var_dump($x);
   var_dump($cart);
 }
