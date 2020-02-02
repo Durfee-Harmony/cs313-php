@@ -29,6 +29,8 @@ function add($item) {
   echo ' x count: ';
   var_dump($x);
   $x++;
+  echo ' x added ';
+  var_dump($x);
   if($x == NULL){
     $cart[0] = $item;
     echo ' null ';
