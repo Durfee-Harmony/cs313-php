@@ -7,7 +7,6 @@ $action = NULL;
 $shop;
 $check = NULL;
 $cart = '<div id="cart"><h1>Cart:</h1>';
-echo 'variables';
 
 function browse() {
   $products = array(0 => "anvil", 1 => "mallet", 2 => "piano", 3 => "rope", 4 => "trap");
@@ -46,8 +45,6 @@ if ($action == "add") {
   $item = filter_input(INPUT_POST, 'item', FILTER_SANITIZE_STRING);
   remove($item);
   echo 'remove';
-} else {
-  echo 'else';
 }
 
 $cart .= '</div>';
@@ -59,8 +56,6 @@ function cart() {
   include 'shopping.php';
 }
 
-echo 'cart';
-var_dump($cart);
 if ($check == NULL) {
   $shop = browse();
   echo 'before include';

@@ -115,6 +115,7 @@ main #intro {
 
 #cart {
   align-self: center;
+  max-height: inherit;
 }
 
 footer {
