@@ -6,7 +6,7 @@ function browse()
   $browse = '<div id="products">';
   $browse .= "<h1>Products:</h1>";
   for($i=0; $i<5; $i++){
-    $browse .= '<img src="../../media/products/' . $products[$i] . '.jpg" alt="' . $products[$i] . '" width="100px"';
+    $browse .= '<img src="../../media/products/' . $products[$i] . '.jpg" alt="' . $products[$i] . '" width="100px">';
     var_dump($products[$i]);
   }
   $browse .= '</div>';
