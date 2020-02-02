@@ -5,7 +5,7 @@ if ($action == NULL) {
 }
 $shop;
 $check = NULL;
-$cart = array();
+$cart;
 $x;
 
 function browse() {
@@ -30,7 +30,7 @@ function add($product) {
   } else {
     $cart[$x] = $product;
   }
-  echo 'add function';
+  echo ' add function ';
   var_dump($x);
 }
 
@@ -45,8 +45,8 @@ function cart() {
   global $cart;
   $c = '<div id="cart"><h1>Cart:</h1>';
   for ($i=0; $i<count($cart); $i++){
-    $c .= '<img src="../../media/products/' . '.jpg" alt="' . '" width="100px">';
-    $c .= '<a class="button" href="shop.php?action=add&item=' . '">Add ' . ' to Cart</a>';
+    $c .= '<img src="../../media/products/' . $cart[$i] . '.jpg" alt="' . $cart[$i] . '" width="100px">';
+    $c .= '<a class="button" href="shop.php?action=add&item=' . $cart[$i] . '">Add ' . $cart[$i] . ' to Cart</a>';
     echo 'cart for loop';
   }
   $c .= '</div>';
