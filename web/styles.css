@@ -110,15 +110,13 @@ main #intro {
 }
 
 #products {
-  display: inline-flex;
+  display: grid;
+  justify-items: center;
+  grid: 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr;
 }
 
 #cart {
   max-height: 100px;
-}
-
-#cartli {
-  align-content: center;
 }
 
 a.button {
@@ -131,7 +129,7 @@ a.button {
 }
 
 a.button:hover {
-  color: #6D8DA0;
+  color: #d1d1d1;
   background-color: #415a77;
 }
 

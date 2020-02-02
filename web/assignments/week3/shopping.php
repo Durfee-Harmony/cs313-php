@@ -18,7 +18,7 @@
         <li><a href="../../index.php">Home</a></li>
         <li><a href="../../index.php?action=mineA">My Assignments</a></li>
         <li><a href="../../index.php?action=teamA">Team Assignments</a></li>
-        <li id="cartli"><img id="cart" src="../../media/products/cart.jpg" alt="cart" onclick=""></li>
+        <li><img id="cart" src="../../media/products/cart.jpg" alt="cart" onclick=""></li>
       </ul>
     </nav>
   </header>
