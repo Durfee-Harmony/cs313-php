@@ -9,8 +9,6 @@ $cart = array();
 $x;
 
 function browse() {
-  global $x;
-  $x = 0;
   $products = array(0 => "anvil", 1 => "mallet", 2 => "piano", 3 => "rope", 4 => "trap");
   $browse = '<h1>Products:</h1>';
   $browse .= '<div id="products">';
@@ -70,6 +68,8 @@ if ($action == "add") {
 }
 
 if ($check == NULL) {
+  global $x;
+  $x = 0;
   $shop = browse();
   echo 'before include';
   include 'shopping.php';
