@@ -23,3 +23,6 @@ INSERT INTO w5_scriptures
   ( book    , chapter, verse, content)
 VALUES
   ( 'Mosiah', 16     , 9    , 'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.');
+
+SELECT *
+FROM w5_scriptures;
