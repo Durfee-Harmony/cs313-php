@@ -1,6 +1,6 @@
-<!-- Page worked -->
 <?php
 require "dbConnect.php";
+require "detail.php";
 $db = get_db();
 
 $scriptures = $db->prepare("SELECT * FROM w5_scriptures");
@@ -13,8 +13,7 @@ while ($fRow = $scriptures->fetch(PDO::FETCH_ASSOC)){
   $chapter = $fRow["chapter"];
   $verse = $fRow["verse"];
   $content = $fRow["content"];
+  $id = $fRow["id"];
 
-  echo '<p><strong>' . $book . $chapter . ':' . $verse . '</strong> &ndash; "' . $content . '"</p>';
+  echo '<a onclick="detail('. $id .')"><strong>' . $book . $chapter . ':' . $verse . '</strong></a>';
 }
-
-?>
