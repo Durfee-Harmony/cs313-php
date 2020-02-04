@@ -15,5 +15,6 @@ while ($fRow = $scriptures->fetch(PDO::FETCH_ASSOC)){
   $content = $fRow["content"];
   $id = $fRow["id"];
 
-  echo '<p onclick="detail('. $id .')"><strong>' . $book . ' ' . $chapter . ':' . $verse . '</strong></p>';
+  echo "this worked";
+  //echo '<p onclick="detail('. $id .')"><strong>' . $book . ' ' . $chapter . ':' . $verse . '</strong></p>';
 }
