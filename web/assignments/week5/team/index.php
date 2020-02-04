@@ -14,7 +14,7 @@ while ($fRow = $scriptures->fetch(PDO::FETCH_ASSOC)){
   $verse = $fRow["verse"];
   $content = $fRow["content"];
 
-  echo "<p><strong>$book $chapter:$verse</strong> &ndash; $content</p>";
+  echo '<p><strong>' . $book . $chapter . ':' . $verse . '</strong> &ndash; "' . $content . '"</p>';
 }
 
 ?>
