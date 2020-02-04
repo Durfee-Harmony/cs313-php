@@ -13,7 +13,7 @@ while ($fRow = $scriptures->fetch(PDO::FETCH_ASSOC)){
   $chapter = $fRow["chapter"];
   $verse = $fRow["verse"];
   $content = $fRow["content"];
-  $id = $fRow["id"];
+  //$id = $fRow["id"];
 
   echo "this worked";
   //echo '<p onclick="detail('. $id .')"><strong>' . $book . ' ' . $chapter . ':' . $verse . '</strong></p>';
