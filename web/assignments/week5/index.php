@@ -1,5 +1,5 @@
 <?php
-    require "../dbConnect.php";
+    require "team/dbConnect.php";
     $db = get_db();
     $scriptureData = NULL;
 ?>
