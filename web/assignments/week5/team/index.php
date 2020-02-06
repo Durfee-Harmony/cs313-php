@@ -31,7 +31,6 @@ if (isset($_POST['search'])) {
     $chapter = $row['chapter'];
     $verse = $row['verse'];
     $content = $row['content'];
-
     echo "<p><strong>$book $chapter:$verse</strong> - \"$content\"<p>";
   }
 }

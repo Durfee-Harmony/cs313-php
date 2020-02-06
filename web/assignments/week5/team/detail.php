@@ -1,7 +1,7 @@
 <?php
 
 $id = $_GET['id'];
-if (empty($id)) {
+if (isset($id)) {
   $db = get_db();
   $scriptures = $db->prepare("SELECT * FROM w5_scriptures WHERE id = $id");
   $scriptures->execute();
