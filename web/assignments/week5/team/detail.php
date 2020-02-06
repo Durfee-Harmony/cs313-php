@@ -1,4 +1,5 @@
 <?php
+require "dbConnect.php";
 
 $id = $_GET['id'];
 if (isset($id)) {
