@@ -22,11 +22,6 @@ echo "<button type='submit' name='search' value='Search'>Search</button></form>"
 
 if (isset($_POST['search'])) {
   $searchString = $_POST['scriptureSearch'];
-  var_dump($searchString);
-  strtolower($searchString);
-  var_dump($searchString);
-  ucfirst($searchString);
-  var_dump($searchString);
   $scriptureData = $db->prepare("SELECT * FROM w5_scriptures WHERE book = '$searchString'");
   $scriptureData->execute();
   while ($row = $scriptureData->fetch(PDO::FETCH_ASSOC)) {
