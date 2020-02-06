@@ -1,6 +1,5 @@
 <?php
 require "dbConnect.php";
-require "detail.php";
 $db = get_db();
 
 $scriptures = $db->prepare("SELECT * FROM w5_scriptures");
