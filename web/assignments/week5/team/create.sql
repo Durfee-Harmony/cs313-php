@@ -5,7 +5,7 @@ CREATE TABLE w5_scriptures
 , book     VARCHAR(50)  NOT NULL
 , chapter  INT          NOT NULL
 , verse    INT          NOT NULL
-, content  VARCHAR(200) NOT NULL);
+, content  VARCHAR(2000) NOT NULL);
 
 INSERT INTO w5_scriptures
   ( book  , chapter, verse, content)
