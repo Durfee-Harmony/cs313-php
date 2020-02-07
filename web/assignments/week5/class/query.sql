@@ -1,8 +1,3 @@
----- php page queries ----
-
-
-
-
 -- \echo '2a. How many events are there?'
 -- SELECT COUNT(id) FROM w5_EVENT;
 
