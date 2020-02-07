@@ -11,5 +11,5 @@ while ($row = $event->fetch(PDO::FETCH_ASSOC)) {
   $name = $row["name"];
   $image = $row["image"];
   echo "<h3>$name</h3>";
-  echo "<img src='$image' alt='picture of $name event'>";
+  echo "<img src='$image' alt='picture of $name event' width='25%'>";
 }
