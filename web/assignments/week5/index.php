@@ -11,6 +11,10 @@ FROM quote q
 $quotes->execute();
 
 echo "<h1>Quotes:</h1>";
+$q = $quotes->fetch(PDO::FETCH_ASSOC);
+$a = $q['a.name'];
+var_dump($a);
+exit;
 
 while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $author = $row["author.name"];
@@ -19,6 +23,5 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   echo "<h3>$author</h3>";
   echo "<p>\"$quote\"</p>";
   echo "<p>$cat</p>";
-  $q = $quotes->fetch(PDO::FETCH_ASSOC);
-  echo "$q[0]";
+  echo "$q";
 }
