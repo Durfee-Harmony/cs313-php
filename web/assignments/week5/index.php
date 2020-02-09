@@ -16,7 +16,7 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $author = $row["name"];
   $quote = $row["txt"];
   $cat = $row["cat"];
-  echo "<h3>$author</h3>";
+  echo "<br><h3>Author: $author</h3>";
   echo "<p>\"$quote\"</p>";
-  echo "<p><strong>$cat</strong></p>";
+  echo "<p><strong>Category: $cat</strong></p>";
 }
