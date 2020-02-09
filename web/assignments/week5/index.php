@@ -19,5 +19,4 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   echo "<h3>$author</h3>";
   echo "<p>\"$quote\"</p>";
   echo "<p>$cat</p>";
-  echo "$q";
 }
