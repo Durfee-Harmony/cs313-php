@@ -20,5 +20,5 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   echo "<p>\"$quote\"</p>";
   echo "<p>$cat</p>";
   $q = $quotes->fetch(PDO::FETCH_ASSOC);
-  echo "$q";
+  echo "$q[0]";
 }
