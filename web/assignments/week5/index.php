@@ -2,7 +2,7 @@
 require_once "team/dbConnect.php";
 $db = get_db();
 
-$quotes = $db->prepare("SELECT a.name, q.txt, c.cat
+$quotes = $db->prepare("SELECT *
 FROM quote q
   JOIN author_quote aq ON aq.quote_id = q.id
   JOIN author a ON a.id = aq.author_id
