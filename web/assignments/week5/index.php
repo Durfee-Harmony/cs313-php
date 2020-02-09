@@ -7,7 +7,7 @@ $quotes->execute();
 
 echo "<h1>Quotes:</h1>";
 $q = $quotes->fetch(PDO::FETCH_ASSOC);
-$a = $q['author.name'];
+$a = $q['name'];
 var_dump($a);
 exit;
 
