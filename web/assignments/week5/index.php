@@ -2,13 +2,17 @@
 require_once "team/dbConnect.php";
 $db = get_db();
 
-$quote = $db->prepare("SELECT * FROM quote");
-$quote->execute();
+$quotes = $db->prepare("SELECT q.txt, a.name
+                        FROM quote q
+                          JOIN author_quote aq ON aq.quote_id = q.id
+                          JOIN author a ON a.id = aq.author_id");
+$quotes->execute();
 
 echo "<h1>Quotes:</h1>";
 
-while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
-  $name = $row["name"];
-  echo "<h3>$name</h3>";
-  echo "<img src='$image' alt='picture of $name quote' width='25%'>";
+while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
+  $author = $row["a.name"];
+  $quote = $row["q.txt"];
+  echo "<h3>$author</h3>";
+  echo "<p>\"$quote\"</p>";
 }
