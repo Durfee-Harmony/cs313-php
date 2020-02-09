@@ -9,9 +9,9 @@ INSERT INTO quote (author_id, txt) VALUES (2, 'Two things are infinite: the univ
 INSERT INTO quote (author_id, txt) VALUES (3, 'You know you''re in love when you can''t fall asleep because reality is finally better than your dreams.');
 
 \echo 'INSERTING INTO category';
-INSERT INTO category (name) VALUES ('Historical');
-INSERT INTO category (name) VALUES ('LDS');
-INSERT INTO category (name) VALUES ('Inspirational');
+INSERT INTO category (cat) VALUES ('Historical');
+INSERT INTO category (cat) VALUES ('LDS');
+INSERT INTO category (cat) VALUES ('Inspirational');
 
 \echo 'INSERTING INTO author_quote';
 INSERT INTO author_quote (author_id, quote_id) VALUES (1, 1);

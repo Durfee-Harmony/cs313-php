@@ -13,7 +13,7 @@ CREATE TABLE quote
 
 CREATE TABLE category
 ( id   SERIAL       NOT NULL PRIMARY KEY
-, name VARCHAR(50)  NOT NULL
+, cat VARCHAR(50)  NOT NULL
 );
 
 CREATE TABLE author_quote
