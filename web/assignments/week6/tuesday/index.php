@@ -20,7 +20,7 @@
                         $statement->execute();
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
                            $id = $row['id'];
-                           $foor = $row['food'];
+                           $food = $row['food'];
                            echo "<option value='$id'>$food</option>";
                         }
                      ?>
