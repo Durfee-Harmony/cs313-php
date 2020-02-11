@@ -20,7 +20,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
   while ($row = $state->fetch(PDO::FETCH_ASSOC)) {
     $topic_id = $row['id'];
     $name = $row['name'];
-    echo "<br>$name<input type='checkbox' value='chk[ ]' name='$topic_id'>";
+    echo "<br>$name <input type='checkbox' value='chk[ ]' name='$topic_id'>";
   }
   echo "<br><div class='col'><button class='btn btn-primary' type='submit'>Save the Topic</button></div>";
 }
