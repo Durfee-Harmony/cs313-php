@@ -7,7 +7,7 @@ $db = get_db();
 $statement = $db->prepare("SELECT * FROM w6_scriptures");
 $statement->execute();
 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-  $id = $row['id'];
+  $scripture_id = $row['id'];
   $book = $row['book'];
   $chapter = $row['chapter'];
   $verse = $row['verse'];
@@ -15,12 +15,12 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
   echo "<h3>$book</h3>";
   echo "<p>$chapter:$verse</p>";
   echo "<textarea>$content</textarea>";
-  $statecheck = $db->prepare("SELECT * FROM w6_topic");
-  $statecheck->execute();
-  while ($row = $statecheck->fetch(PDO::FETCH_ASSOC)) {
-    $id = $row['id'];
+  $state = $db->prepare("SELECT * FROM w6_topic");
+  $state->execute();
+  while ($row = $state->fetch(PDO::FETCH_ASSOC)) {
+    $topic_id = $row['id'];
     $name = $row['name'];
-    echo "$name<input type='checkbox' value='$name' name='$id'>";
+    echo "<br>$name<input type='checkbox' value='chk[ ]' name='$topic_id'>";
   }
-  echo "<div class='col'><button class='btn btn-primary' type='submit'>Save the Topic</button></div>";
+  echo "<br><div class='col'><button class='btn btn-primary' type='submit'>Save the Topic</button></div>";
 }

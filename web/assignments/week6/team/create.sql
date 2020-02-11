@@ -32,8 +32,7 @@ INSERT INTO w6_scriptures
 VALUES
   ( 'Mosiah', 16     , 9    , 'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.');
 
-SELECT *
-FROM w6_scriptures;
+-- SELECT * FROM w6_scriptures;
 
 INSERT INTO w6_topic (name) VALUES ('Faith');
 INSERT INTO w6_topic (name) VALUES ('Sacrifice');
