@@ -100,7 +100,7 @@
 -- GROUP BY p.name, event_id
 --   HAVING COUNT(event_id)>1;
 
--------------------misinterpreted directions-------------------
+-- -----------------misinterpreted directions-------------------
 -- SELECT p1.name, ep1.event_id, COUNT(*)
 --   FROM w5_EVENT_PARTICIPANT ep1
 --   JOIN w5_PARTICIPANT p1 ON p1.id = ep1.participant_id
@@ -145,7 +145,7 @@
 --   WHERE et.name = 'Swim Competition'
 --   GROUP BY et.name;
 
--------------------misinterpreted directions-------------------
+-- -----------------misinterpreted directions-------------------
 -- SELECT et.name, COUNT(ep.participant_id)
 --   FROM w5_EVENT_TYPE et
 --     JOIN w5_EVENT e ON et.id = e.type
