@@ -12,7 +12,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
   $chapter = $row['chapter'];
   $verse = $row['verse'];
   $content = $row['content'];
-  echo "<h2>$book</h2>";
+  echo "<h3>$book</h3>";
   echo "<p>$chapter:$verse</p>";
   echo "<textarea>$content</textarea>";
   $statecheck = $db->prepare("SELECT * FROM w6_topic");
@@ -20,7 +20,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
   while ($row = $statecheck->fetch(PDO::FETCH_ASSOC)) {
     $id = $row['id'];
     $name = $row['name'];
-    echo "<input type='checkbox' value='$name' name='$id'>";
+    echo "$name<input type='checkbox' value='$name' name='$id'>";
   }
-  echo "<div class='col'><button class='btn btn-primary' type='submit'>Save me some food</button></div>";
+  echo "<div class='col'><button class='btn btn-primary' type='submit'>Save the Topic</button></div>";
 }
