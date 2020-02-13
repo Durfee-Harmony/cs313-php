@@ -10,13 +10,15 @@ body {
   margin: 0 auto;
 }
 
+header {
+  display: inline-block;
+}
+
 div#quote-div {
   background-color: #6D8DA0;
   line-height: 3em;
   text-align: center;
   font-size: 1.2em;
-  grid-column: 1/4;
-  grid-row: 2/3;
 }
 
 a.quote {
