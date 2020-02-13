@@ -7,7 +7,7 @@ $quotes->execute();
 
 echo "<link rel='stylesheet' type='text/css' href='../styles.css'/>";
 echo "<link rel='stylesheet' type='text/css' href='styles.css'/>";
-echo "<header><h1>Quotes:</h1><header><nav>";
+echo "<header><h1>Quotes:</h1><header><div id='quote-div'>";
 
 while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $id = $row["id"];
@@ -19,4 +19,4 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   echo "<a class='quote' href='detail.php?id=$id'>\"$txt\"</a><br>";
 }
 
-echo "</nav>";
+echo "</div>";

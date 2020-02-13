@@ -1,15 +1,24 @@
-/* a.quote:link {
+div#quote-div {
+  background-color: #6D8DA0;
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.2em;
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+
+a.quote {
+  padding: 1em;
+  min-width: 70px;
+}
+
+a.quote:link,
+a.quote:visited {
+  color: #d1d1d1;
   text-decoration: none;
 }
 
 a.quote:hover {
-  color: red;
+  color: #d1d1d1;
+  background-color: #415a77;
 }
-
-a.quote:active {
-  color: red;
-}
-
-a.quote:visited {
-  color: red;
-} */
