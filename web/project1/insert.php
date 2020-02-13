@@ -6,6 +6,8 @@ $x = filter_input(INPUT_POST, 'x');
 if ($x == NULL) {
 	$x = filter_input(INPUT_GET, 'x');
 }
+echo "<link rel='stylesheet' type='text/css' href='../styles.css'/>";
+echo "<link rel='stylesheet' type='text/css' href='styles.css'/>";
 
 if ($x == 'q') {
 	$txt = $_POST['txt'];

@@ -22,17 +22,22 @@ div#quote-div {
   display: inline-grid;
 }
 
-a.quote {
+a.button:link {
+  font-family: 'Poppins',
+    sans-serif;
+  text-decoration: none;
+}
+
+a.quote:link {
   padding: 0 1em;
   min-width: 70px;
   font-family: 'Poppins',
-  sans-serif;
+    sans-serif;
+  text-decoration: none;
 }
 
-a.quote:link,
 a.quote:visited {
   color: #d1d1d1;
-  text-decoration: none;
 }
 
 a.quote:hover {

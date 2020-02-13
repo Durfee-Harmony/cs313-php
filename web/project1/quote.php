@@ -6,6 +6,8 @@ $id = filter_input(INPUT_POST, 'id');
 if ($id == NULL) {
   $id = filter_input(INPUT_GET, 'id');
 }
+echo "<link rel='stylesheet' type='text/css' href='../styles.css'/>";
+echo "<link rel='stylesheet' type='text/css' href='styles.css'/>";
 
 $quotes = $db->prepare("SELECT *
 FROM quote q
@@ -25,5 +27,5 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   echo "<p>\"$quote\"</p>";
   echo "<p><strong>Category: $cat</strong></p>";
   echo "<a class='button' href='update.php?id=$id'>Update</a>";
-  echo "<a class='button' href='delete.php?id=$id'>delete</a>";
+  echo "<a class='button' href='delete.php?id=$id'>Delete</a>";
 }
