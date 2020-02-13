@@ -2,13 +2,18 @@
 require_once "dbConnect.php";
 $db = get_db();
 
-$quotes = $db->prepare("SELECT id, txt FROM quote");
+$quotes = $db->prepare("SELECT id, txt, img FROM quote");
 $quotes->execute();
 
+echo "<link rel='stylesheet' type='text/css' href='styles.css'/>";
 echo "<h1>Quotes:</h1>";
 
 while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $id = $row["id"];
-  $quote = $row["txt"];
-  echo "<a href='detail.php?id=$id'>\"$quote\"</a>";
+  $txt = $row["txt"];
+  $img = $row["img"];
+  if(isset($img)){
+    echo "<img src='$img' alt='quote'>";
+  }
+  echo "<a href='detail.php?id=$id'>\"$txt\"</a><br>";
 }
