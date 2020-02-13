@@ -17,8 +17,6 @@ WHERE q.id = :id");
 $quotes->bindValue(':id', $id);
 $quotes->execute();
 
-echo "<h1>Quotes:</h1>";
-
 while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $author = $row["name"];
   $quote = $row["txt"];
@@ -26,4 +24,6 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   echo "<br><h3>Author: $author</h3>";
   echo "<p>\"$quote\"</p>";
   echo "<p><strong>Category: $cat</strong></p>";
+  echo "<a class='button' href='update.php?id=$id'>Update</a>";
+  echo "<a class='button' href='delete.php?id=$id'>delete</a>";
 }
