@@ -7,10 +7,10 @@ $quotes->execute();
 
 echo "<link rel='stylesheet' type='text/css' href='../styles.css'/>";
 echo "<link rel='stylesheet' type='text/css' href='styles.css'/>";
-echo "<header><h1>Quotes:</h1>";
-echo "<a class='button' href='insert.php?x=quote'>Add Quote</a>";
-echo "<a class='button' href='insert.php?x=author'>Add Author</a>";
-echo "<a class='button' href='insert.php?x=cat'>Add Category</a>";
+echo "<header><h1>All Quotes:</h1>";
+echo "<a class='button' href='insert.php?x=q'>Add Quote</a>";
+echo "<a class='button' href='insert.php?x=a'>Add Author</a>";
+echo "<a class='button' href='insert.php?x=c'>Add Category</a>";
 echo "<header><div id='quote-div'>";
 
 while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
