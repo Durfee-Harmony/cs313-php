@@ -33,8 +33,13 @@ function categories($db)
 function addQuote($db)
 {
   $txt = filter_input(INPUT_POST, 'txt');
-  $author_id = filter_input(INPUT_POST, 'author_select', FILTER_SANITIZE_NUMBER_INT);
+  $author_id = filter_input(INPUT_POST, 'author_select');
   $cat = filter_input(INPUT_POST, 'category_select');
+  $author = "SELECT id FROM author WHERE name = $author_id";
+  $s = $db->prepare($author);
+  $s->execute();
+  $a = $s->fetch(PDO::FETCH_ASSOC);
+  $author_id = $a["id"];
 
   try {
     $query = "INSERT INTO quote (txt, author_id) VALUES (\"$txt\", $author_id);";
