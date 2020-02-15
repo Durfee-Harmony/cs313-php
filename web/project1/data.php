@@ -33,8 +33,8 @@ function categories($db)
 function addQuote($db)
 {
   $txt = filter_input(INPUT_POST, 'txt');
-  $author_id = $_POST['author_select'];
-  $cat = $_POST['category_select'];
+  $author_id = filter_input(INPUT_POST, 'author_select');
+  $cat = filter_input(INPUT_POST, 'category_select');
 
   try {
     $query = "INSERT INTO quote (txt, author_id) VALUES (\"$txt\", $author_id);";
