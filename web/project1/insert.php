@@ -7,8 +7,6 @@ $x = filter_input(INPUT_POST, 'x');
 if ($x == NULL) {
 	$x = filter_input(INPUT_GET, 'x');
 }
-echo "<link rel='stylesheet' type='text/css' href='../styles.css'/>";
-echo "<link rel='stylesheet' type='text/css' href='styles.css'/>";
 
 if ($x == 'q') {
 	echo "<form method='post' action='data.php?i=q'><div>";
