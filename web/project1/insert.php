@@ -1,7 +1,7 @@
 <?php
 require("dbConnect.php");
 $db = get_db();
-require_once "functions.php";
+require_once "data.php";
 
 $x = filter_input(INPUT_POST, 'x');
 if ($x == NULL) {
@@ -11,16 +11,14 @@ echo "<link rel='stylesheet' type='text/css' href='../styles.css'/>";
 echo "<link rel='stylesheet' type='text/css' href='styles.css'/>";
 
 if ($x == 'q') {
+	echo "<form method='post' action='data.php?i=q'><div>";
+	echo "<p>Enter Quote Text: </p><input type='text' name='txt' id='txt' required>";
+	echo "<p>Choose Quote Author: </p>";
+	echo authors($db);
+	echo "<p>Choose Quote Category: </p>";
+	echo "</div><br><input type='submit' class='button' name='submit' value='Add Quote'>";
+	echo "<input type='hidden' name='i' value='q'></form>";
 	echo "quote";
-	$q = addQuote($db);
-	if($q){
-		$quote = $db->prepare("SELECT MAX(id) FROM quote");
-		$quote->execute();
-		while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
-			$quote_id = $row["id"];
-			header("Location: quote.php/?id=$quote_id");
-		}
-	}
 } else if ($x == 'a') {
 	echo "author";
 } else if ($x == 'c') {
