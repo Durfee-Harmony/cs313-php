@@ -20,14 +20,14 @@ function categories($db)
 {
   $categories = $db->prepare("SELECT * FROM category");
   $categories->execute();
-  $a = "<select id=category_select>";
+  $c = "<select id=category_select>";
   while ($row = $categories->fetch(PDO::FETCH_ASSOC)) {
     $cat = $row["cat"];
     $id = $row["id"];
-    $a .= "<option id='$id'>$cat</option>";
+    $c .= "<option id='$id'>$cat</option>";
   }
-  $a .= "</select>";
-  return $a;
+  $c .= "</select>";
+  return $c;
 }
 
 function addQuote($db)

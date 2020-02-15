@@ -14,8 +14,11 @@ if ($x == 'q') {
 	echo "<form method='post' action='data.php?i=q'><div>";
 	echo "<p>Enter Quote Text: </p><input type='text' name='txt' id='txt' required>";
 	echo "<p>Choose Quote Author: </p>";
-	echo authors($db);
+	$a = authors($db);
+	echo $a;
 	echo "<p>Choose Quote Category: </p>";
+	$c = categories($db);
+	echo $c;
 	echo "</div><br><input type='submit' class='button' name='submit' value='Add Quote'>";
 	echo "<input type='hidden' name='i' value='q'></form>";
 	echo "quote";
