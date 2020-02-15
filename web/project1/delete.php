@@ -1,5 +1,5 @@
 <?php
-require("dbConnect.php");
+require_once "dbConnect.php";
 $db = get_db();
 
 echo "<link rel='stylesheet' type='text/css' href='../styles.css'/>";
