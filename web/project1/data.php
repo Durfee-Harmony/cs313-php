@@ -37,7 +37,7 @@ function addQuote($db)
   $cat = $_POST['category_select'];
 
   try {
-    $query = "INSERT INTO quote (txt, author_id) VALUES ($txt, $author_id);";
+    $query = "INSERT INTO quote (txt, author_id) VALUES (\"$txt\", $author_id);";
     $statement = $db->prepare($query);
     $statement->execute();
     $quote = $db->prepare("SELECT MAX(id) FROM quote");
