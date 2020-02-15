@@ -16,6 +16,7 @@
     <nav>
       <ul>
         <li><a href="../index.php">Home</a></li>
+        <li><a href="../project1/index.php">Project 1</a></li>
         <li><a href="../index.php?action=mineA">My Assignments</a></li>
         <li><a href="../index.php?action=teamA">Team Assignments</a></li>
       </ul>

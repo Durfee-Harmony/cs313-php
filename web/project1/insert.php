@@ -1,6 +1,7 @@
 <?php
 require("dbConnect.php");
 $db = get_db();
+require_once "functions.php";
 
 $x = filter_input(INPUT_POST, 'x');
 if ($x == NULL) {
@@ -10,26 +11,16 @@ echo "<link rel='stylesheet' type='text/css' href='../styles.css'/>";
 echo "<link rel='stylesheet' type='text/css' href='styles.css'/>";
 
 if ($x == 'q') {
-	$txt = $_POST['txt'];
-	$src = $_POST['src'];
-	$img = $_POST['img'];
-	$author_id = $_POST['author_id'];
-
-	try {
-		$query = "INSERT INTO quote (txt, src, img, author_id) VALUES (:txt, :src, :img, :author_id)";
-		$statement = $db->prepare($query);
-		$statement->bindValue(':txt', $txt);
-		$statement->bindValue(':src', $src);
-		$statement->bindValue(':img', $img);
-		$statement->bindValue(':author_id', $author_id);
-		$statement->execute();
-	} catch (Exception $ex) {
-		echo "Error with DB. Details: $ex";
-		die();
+	echo "quote";
+	$q = addQuote($db);
+	if($q){
+		$quote = $db->prepare("SELECT MAX(id) FROM quote");
+		$quote->execute();
+		while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
+			$quote_id = $row["id"];
+			header("Location: quote.php/?id=$quote_id");
+		}
 	}
-	header("Location: display.php/?quote=$quote_id");
-
-	die();
 } else if ($x == 'a') {
 	echo "author";
 } else if ($x == 'c') {
