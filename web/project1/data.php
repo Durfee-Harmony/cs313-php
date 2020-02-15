@@ -33,7 +33,7 @@ function categories($db)
 function addQuote($db)
 {
   $txt = filter_input(INPUT_POST, 'txt');
-  $author_id = filter_input(INPUT_POST, 'author_select');
+  $author_id = filter_input(INPUT_POST, 'author_select', FILTER_SANITIZE_NUMBER_INT);
   $cat = filter_input(INPUT_POST, 'category_select');
 
   try {
