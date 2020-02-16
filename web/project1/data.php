@@ -101,6 +101,7 @@ function delete($id)
     $state->execute();
     $s = $db->prepare("DELETE FROM quote_category WHERE quote_id = $id");
     $s->execute();
+    header('Location: index.php');
   } catch (Exception $ex) {
     echo "Error with DB. Details: $ex";
   }
