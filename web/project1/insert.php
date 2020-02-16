@@ -13,10 +13,10 @@ if ($x == 'q') {
 	$page .= "<form method='post' action='data.php?i=q'><div>";
 	$page .= "<p>Enter Quote Text: </p><input type='text' name='txt' id='txt' required>";
 	$page .= "<p>Choose Quote Author: </p>";
-	$a = authors($db);
+	$a = authors($db, null);
 	$page .= $a;
 	$page .= "<p>Choose Quote Category: </p>";
-	$c = categories($db);
+	$c = categories($db, null);
 	$page .= $c;
 	$page .= "</div><br><input type='submit' class='button' name='submit' value='Add Quote'>";
 	$page .= "<input type='hidden' name='i' value='q'></form>";

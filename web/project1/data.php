@@ -2,7 +2,7 @@
 require_once "dbConnect.php";
 $db = get_db();
 
-function authors($db)
+function authors($db, $author_id)
 {
   $authors = $db->prepare("SELECT * FROM author");
   $authors->execute();
@@ -10,13 +10,17 @@ function authors($db)
   while ($row = $authors->fetch(PDO::FETCH_ASSOC)) {
     $name = $row["name"];
     $id = $row["id"];
-    $a .= "<option id='$id'>$name</option>";
+    $a .= "<option id='$id' ";
+    if($author_id == $id){
+      $a .= "selected";
+    }
+    $a .= ">$name</option>";
   }
   $a .= "</select>";
   return $a;
 }
 
-function categories($db)
+function categories($db, $cat_id)
 {
   $categories = $db->prepare("SELECT * FROM category");
   $categories->execute();
@@ -24,7 +28,11 @@ function categories($db)
   while ($row = $categories->fetch(PDO::FETCH_ASSOC)) {
     $cat = $row["cat"];
     $id = $row["id"];
-    $c .= "<option id='$id'>$cat</option>";
+    $c .= "<option id='$id' ";
+    if ($cat_id == $id) {
+      $c .= "selected";
+    }
+    $c .= ">$cat</option>";
   }
   $c .= "</select>";
   return $c;
