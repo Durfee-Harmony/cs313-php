@@ -30,13 +30,10 @@ function categories($db)
   return $c;
 }
 
-function addQuote($db)
+function addQuote($txt, $author_id, $cat)
 {
   echo "function add quote";
-  var_dump($db);
-  $txt = filter_input(INPUT_POST, 'txt');
-  $author_id = filter_input(INPUT_POST, 'author_select');
-  $cat = filter_input(INPUT_POST, 'category_select');
+  $db = get_db();
   $author = "SELECT id FROM author WHERE name = $author_id";
   $s = $db->prepare($author);
   $s->execute();
@@ -72,8 +69,14 @@ if ($i == NULL) {
 }
 
 if ($i == 'q') {
-  echo "add quote";
-  $q = addQuote($db);
+  echo " add quote ";
+  $txt = filter_input(INPUT_POST, 'txt');
+  $author_id = filter_input(INPUT_POST, 'author_select');
+  $cat = filter_input(INPUT_POST, 'category_select');
+  var_dump($txt);
+  var_dump($author_id);
+  var_dump($cat);
+  $q = addQuote($txt, $author_id, $cat);
   if ($q) {
     $quote = $db->prepare("SELECT MAX(id) FROM quote");
     $quote->execute();
