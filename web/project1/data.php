@@ -30,30 +30,33 @@ function categories($db)
   return $c;
 }
 
-function addQuote($txt, $author_id, $cat)
+function addQuote($txt, $author, $cat)
 {
   echo "function add quote";
   $db = get_db();
-  $author = "SELECT id FROM author WHERE name = $author_id";
-  $s = $db->prepare($author);
+  $s = $db->prepare("SELECT id FROM author WHERE name = $author");
   $s->execute();
   $a = $s->fetch(PDO::FETCH_ASSOC);
   $author_id = $a["id"];
+  $s = $db->prepare("SELECT id FROM category WHERE cat = $cat");
+  $s->execute();
+  $c = $s->fetch(PDO::FETCH_ASSOC);
+  $cat_id = $c["id"];
 
   try {
     echo "try";
-    $query = "INSERT INTO quote (txt) VALUES (\"$txt\");";
+    $query = "INSERT INTO quote (txt) VALUES (\"$txt\")";
     $statement = $db->prepare($query);
     $statement->execute();
     $quote = $db->prepare("SELECT MAX(id) FROM quote");
     $quote->execute();
     while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
-      // $quote_id = $row["id"];
-      // $add = "INSERT INTO author_quote (author_id, quote_id) VALUES ($author_id, $quote_id);";
-      // $add .= "INSERT INTO quote_category (category_id, quote_id) VALUES ($cat, $quote_id);";
-      // $state = $db->prepare($add);
-      // $state->execute();
-      header("Location: quote.php/?id=4");
+      $quote_id = $row["id"];
+      $add = "INSERT INTO author_quote (author_id, quote_id) VALUES ($author_id, $quote_id);";
+      $add .= "INSERT INTO quote_category (category_id, quote_id) VALUES ($cat_id, $quote_id);";
+      $state = $db->prepare($add);
+      $state->execute();
+      header("Location: quote.php/?id=$quote_id");
     }
   } catch (Exception $ex) {
     echo "Error with DB. Details: $ex";
@@ -71,12 +74,12 @@ if ($i == NULL) {
 if ($i == 'q') {
   echo " add quote ";
   $txt = filter_input(INPUT_POST, 'txt');
-  $author_id = filter_input(INPUT_POST, 'author_select');
+  $author = filter_input(INPUT_POST, 'author_select');
   $cat = filter_input(INPUT_POST, 'category_select');
   var_dump($txt);
-  var_dump($author_id);
+  var_dump($author);
   var_dump($cat);
-  $q = addQuote($txt, $author_id, $cat);
+  $q = addQuote($txt, $author, $cat);
   if ($q) {
     $quote = $db->prepare("SELECT MAX(id) FROM quote");
     $quote->execute();
