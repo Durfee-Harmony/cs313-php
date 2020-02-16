@@ -4,9 +4,9 @@ INSERT INTO author (name) VALUES ('Albert Einstein');
 INSERT INTO author (name) VALUES ('Dr. Seuss');
 
 \echo 'INSERTING INTO quote';
-INSERT INTO quote (author_id, txt) VALUES (1, 'Be yourself; everyone else is already taken.');
-INSERT INTO quote (author_id, txt) VALUES (2, 'Two things are infinite: the universe and human stupidity; and I''m not sure about the universe.');
-INSERT INTO quote (author_id, txt) VALUES (3, 'You know you''re in love when you can''t fall asleep because reality is finally better than your dreams.');
+INSERT INTO quote (txt) VALUES ('Be yourself; everyone else is already taken.');
+INSERT INTO quote (txt) VALUES ('Two things are infinite: the universe and human stupidity; and I''m not sure about the universe.');
+INSERT INTO quote (txt) VALUES ('You know you''re in love when you can''t fall asleep because reality is finally better than your dreams.');
 
 \echo 'INSERTING INTO category';
 INSERT INTO category (cat) VALUES ('Historical');
