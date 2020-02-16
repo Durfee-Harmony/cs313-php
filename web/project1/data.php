@@ -32,7 +32,6 @@ function categories($db)
 
 function addQuote($txt, $author, $cat)
 {
-  echo "function add quote";
   $db = get_db();
   $s = $db->prepare("SELECT id FROM author WHERE name = '$author'");
   $s->execute();
@@ -42,9 +41,7 @@ function addQuote($txt, $author, $cat)
   $s->execute();
   $c = $s->fetch(PDO::FETCH_ASSOC);
   $cat_id = $c["id"];
-  echo " about to try ";
   try {
-    echo "try";
     $query = "INSERT INTO quote (txt) VALUES ('$txt')";
     $statement = $db->prepare($query);
     $statement->execute();
@@ -63,6 +60,36 @@ function addQuote($txt, $author, $cat)
   }
 }
 
+function update($id, $txt, $author, $cat)
+{
+  $db = get_db();
+  $s = $db->prepare("SELECT id FROM author WHERE name = '$author'");
+  $s->execute();
+  $a = $s->fetch(PDO::FETCH_ASSOC);
+  $author_id = $a["id"];
+  $s = $db->prepare("SELECT id FROM category WHERE cat = '$cat'");
+  $s->execute();
+  $c = $s->fetch(PDO::FETCH_ASSOC);
+  $cat_id = $c["id"];
+  try {
+    $query = "UPDATE quote SET txt = \'$txt\' WHERE id = $id";
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $quote = $db->prepare("SELECT * FROM quote WHERE id = $id");
+    $quote->execute();
+    while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
+      $quote_id = $row["id"];
+      $txt = $row["txt"];
+      $add = $db->prepare("UPDATE author_quote SET author_id = $author_id WHERE quote_id = $quote_id");
+      $add->execute();
+      $state = $db->prepare("UPDATE quote_category SET category_id = $cat_id WHERE quote_id = $quote_id");
+      $state->execute();
+      echo "id: $quote_id txt: $txt";
+    }
+  } catch (Exception $ex) {
+    echo "Error with DB. Details: $ex";
+  }
+}
 
 $i = filter_input(INPUT_POST, 'i');
 if ($i == NULL) {
@@ -70,9 +97,15 @@ if ($i == NULL) {
 }
 
 if ($i == 'q') {
-  echo " add quote ";
   $txt = filter_input(INPUT_POST, 'txt');
   $author = filter_input(INPUT_POST, 'author_select');
   $cat = filter_input(INPUT_POST, 'category_select');
   addQuote($txt, $author, $cat);
+} else if ($i == 'u') {
+  echo " update ";
+  $id = filter_input(INPUT_GET, 'id');
+  $txt = filter_input(INPUT_POST, 'txt');
+  $author = filter_input(INPUT_POST, 'author_select');
+  $cat = filter_input(INPUT_POST, 'category_select');
+  update($id, $txt, $author, $cat);
 }

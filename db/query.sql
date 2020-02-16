@@ -6,6 +6,3 @@
 --   JOIN category c ON c.id = qc.category_id;
 
 --   SELECT * FROM category;
-
-SELECT MAX(id)
-FROM quote
