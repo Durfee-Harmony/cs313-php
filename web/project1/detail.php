@@ -1,22 +1,19 @@
-<?php
-require_once "dbConnect.php";
-$db = get_db();
+<!DOCTYPE html>
+<html lang="en">
 
-$quotes = $db->prepare("SELECT *
-FROM quote q
-  JOIN author_quote aq ON aq.quote_id = q.id
-  JOIN author a ON a.id = aq.author_id
-  JOIN quote_category qc ON q.id = qc.quote_id
-  JOIN category c ON c.id = qc.category_id");
-$quotes->execute();
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Harmony Durfee">
+  <meta name="description" content="This is a project for web engineering 2.">
+  <link href="../styles.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="styles.css" rel="stylesheet" type="text/css" media="screen">
+  <meta name="viewport" content="width=device-width">
+</head>
 
-echo "<h1>Quotes:</h1>";
+<body>
 
-while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
-  $author = $row["name"];
-  $quote = $row["txt"];
-  $cat = $row["cat"];
-  echo "<br><h3>Author: $author</h3>";
-  echo "<p>\"$quote\"</p>";
-  echo "<p><strong>Category: $cat</strong></p>";
-}
+</body>
+
+</html>
