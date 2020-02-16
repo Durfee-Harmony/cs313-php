@@ -20,13 +20,3 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
 }
 $page .= "</div>";
 include "detail.php";
-
-
-$x = filter_input(INPUT_POST, 'x');
-if ($x == NULL) {
-  $x = filter_input(INPUT_GET, 'x');
-}
-function detail($page)
-{
-  include "detail.php";
-}

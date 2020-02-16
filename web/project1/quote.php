@@ -1,7 +1,6 @@
 <?php
 require_once "dbConnect.php";
 $db = get_db();
-require_once "index.php";
 
 $id = filter_input(INPUT_POST, 'id');
 if ($id == NULL) {
@@ -28,6 +27,12 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $page .= "<p><strong>Category: $cat</strong></p>";
   $page .= "<a class='button' href='update.php?id=$id'>Update</a>";
   $page .= "<a class='button' href='delete.php?id=$id'>Delete</a>";
+}
+
+function detail($page)
+{
+  $page;
+  include "detail.php";
 }
 
 detail($page);
