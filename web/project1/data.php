@@ -42,7 +42,7 @@ function addQuote($txt, $author, $cat)
   $s->execute();
   $c = $s->fetch(PDO::FETCH_ASSOC);
   $cat_id = $c["id"];
-
+  echo " about to try ";
   try {
     echo "try";
     $query = "INSERT INTO quote (txt) VALUES (\"$txt\")";
@@ -60,9 +60,7 @@ function addQuote($txt, $author, $cat)
     }
   } catch (Exception $ex) {
     echo "Error with DB. Details: $ex";
-    return false;
   }
-  return true;
 }
 
 
@@ -76,8 +74,5 @@ if ($i == 'q') {
   $txt = filter_input(INPUT_POST, 'txt');
   $author = filter_input(INPUT_POST, 'author_select');
   $cat = filter_input(INPUT_POST, 'category_select');
-  $q = addQuote($txt, $author, $cat);
-  if($q){
-    echo "<br> quote added?";
-  }
+  addQuote($txt, $author, $cat);
 }
