@@ -32,6 +32,8 @@ function categories($db)
 
 function addQuote($db)
 {
+  echo "function add quote";
+  var_dump($db);
   $txt = filter_input(INPUT_POST, 'txt');
   $author_id = filter_input(INPUT_POST, 'author_select');
   $cat = filter_input(INPUT_POST, 'category_select');
@@ -42,6 +44,7 @@ function addQuote($db)
   $author_id = $a["id"];
 
   try {
+    echo "try";
     $query = "INSERT INTO quote (txt) VALUES (\"$txt\");";
     $statement = $db->prepare($query);
     $statement->execute();
@@ -70,13 +73,13 @@ if ($i == NULL) {
 
 if ($i == 'q') {
   echo "add quote";
-  // $q = addQuote($db);
-  // if ($q) {
-  //   $quote = $db->prepare("SELECT MAX(id) FROM quote");
-  //   $quote->execute();
-  //   while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
-  //     $quote_id = $row["id"];
-  //     header("Location: quote.php/?id=$quote_id");
-  //   }
-  // }
+  $q = addQuote($db);
+  if ($q) {
+    $quote = $db->prepare("SELECT MAX(id) FROM quote");
+    $quote->execute();
+    while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
+      $quote_id = $row["id"];
+      header("Location: quote.php/?id=$quote_id");
+    }
+  }
 }
