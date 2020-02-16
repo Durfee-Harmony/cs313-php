@@ -76,16 +76,8 @@ if ($i == 'q') {
   $txt = filter_input(INPUT_POST, 'txt');
   $author = filter_input(INPUT_POST, 'author_select');
   $cat = filter_input(INPUT_POST, 'category_select');
-  var_dump($txt);
-  var_dump($author);
-  var_dump($cat);
   $q = addQuote($txt, $author, $cat);
-  if ($q) {
-    $quote = $db->prepare("SELECT MAX(id) FROM quote");
-    $quote->execute();
-    while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
-      $quote_id = $row["id"];
-      header("Location: quote.php/?id=$quote_id");
-    }
+  if($q){
+    echo "<br> quote added?";
   }
 }
