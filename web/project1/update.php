@@ -1,6 +1,7 @@
 <?php
 require_once "dbConnect.php";
 $db = get_db();
+require_once "data.php";
 
 $id = filter_input(INPUT_POST, 'id');
 if ($id == NULL) {

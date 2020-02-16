@@ -1,6 +1,7 @@
 <?php
 require_once "dbConnect.php";
 $db = get_db();
+require_once "data.php";
 
 $quotes = $db->prepare("SELECT *
 FROM quote q
