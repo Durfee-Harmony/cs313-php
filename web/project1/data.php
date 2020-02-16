@@ -92,7 +92,7 @@ function update($id, $txt, $author, $cat)
       $add->execute();
       $state = $db->prepare("UPDATE quote_category SET category_id = $cat_id WHERE quote_id = $quote_id");
       $state->execute();
-      echo "id: $quote_id txt: $txt";
+      header("Location: quote.php?id=$quote_id");
     }
   } catch (Exception $ex) {
     echo "Error with DB. Details: $ex";
