@@ -52,9 +52,9 @@ function addQuote($txt, $author, $cat)
     $quote->execute();
     while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
       $quote_id = $row["max"];
-      $add = "INSERT INTO author_quote (author_id, quote_id) VALUES ($author_id, $quote_id);";
-      $add .= "INSERT INTO quote_category (category_id, quote_id) VALUES ($cat_id, $quote_id);";
-      $state = $db->prepare($add);
+      $add = $db->prepare("INSERT INTO author_quote (author_id, quote_id) VALUES ($author_id, $quote_id);");
+      $add->execute();
+      $state = $db->prepare("INSERT INTO quote_category (category_id, quote_id) VALUES ($cat_id, $quote_id);");
       $state->execute();
       header("Location: quote.php/?id=$quote_id");
     }
