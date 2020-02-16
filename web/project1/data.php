@@ -45,7 +45,7 @@ function addQuote($txt, $author, $cat)
   echo " about to try ";
   try {
     echo "try";
-    $query = "INSERT INTO quote (txt) VALUES (\"$txt\")";
+    $query = "INSERT INTO quote (txt) VALUES (\'$txt\')";
     $statement = $db->prepare($query);
     $statement->execute();
     $quote = $db->prepare("SELECT MAX(id) FROM quote");

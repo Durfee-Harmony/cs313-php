@@ -7,6 +7,19 @@
 
 --   SELECT * FROM category;
 
-SELECT id
-FROM author
-WHERE name = 'Dr. Seuss';
+INSERT INTO quote
+  (txt)
+VALUES
+  ('this is the qutoe');
+
+INSERT INTO author_quote
+  (author_id, quote_id)
+VALUES
+  (1, 4);
+
+INSERT INTO quote_category
+  (category_id, quote_id)
+VALUES
+  (2, 4);
+
+SELECT * FROM quote;
