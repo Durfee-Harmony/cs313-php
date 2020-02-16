@@ -34,11 +34,11 @@ function addQuote($txt, $author, $cat)
 {
   echo "function add quote";
   $db = get_db();
-  $s = $db->prepare("SELECT id FROM author WHERE name = $author");
+  $s = $db->prepare("SELECT id FROM author WHERE name = \'$author\'");
   $s->execute();
   $a = $s->fetch(PDO::FETCH_ASSOC);
   $author_id = $a["id"];
-  $s = $db->prepare("SELECT id FROM category WHERE cat = $cat");
+  $s = $db->prepare("SELECT id FROM category WHERE cat = \'$cat\'");
   $s->execute();
   $c = $s->fetch(PDO::FETCH_ASSOC);
   $cat_id = $c["id"];
