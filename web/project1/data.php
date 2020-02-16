@@ -53,7 +53,7 @@ function addQuote($db)
       // $add .= "INSERT INTO quote_category (category_id, quote_id) VALUES ($cat, $quote_id);";
       // $state = $db->prepare($add);
       // $state->execute();
-      header("Location: quote.php/?id=$quote_id");
+      header("Location: quote.php/?id=4");
     }
   } catch (Exception $ex) {
     echo "Error with DB. Details: $ex";
