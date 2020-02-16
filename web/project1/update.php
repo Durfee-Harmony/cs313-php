@@ -22,7 +22,7 @@ $row = $s->fetch(PDO::FETCH_ASSOC);
 $txt = $row["txt"];
 
 $page = "<form method='post' action='data.php?i=u&id=$id'><div>";
-$page .= "<p>Update Quote Text: </p><input type='text' name='txt' id='txt' required>";
+$page .= "<p>Update Quote Text: </p><input type='text' name='txt' id='txt' value='$txt' required>";
 $page .= "<p>Update Quote Author: </p>";
 $a = authors($db, $a);
 $page .= $a;

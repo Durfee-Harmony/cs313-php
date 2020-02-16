@@ -80,7 +80,7 @@ function update($id, $txt, $author, $cat)
   $c = $s->fetch(PDO::FETCH_ASSOC);
   $cat_id = $c["id"];
   try {
-    $query = "UPDATE quote SET txt = \'$txt\' WHERE id = $id";
+    $query = "UPDATE quote SET txt = '$txt' WHERE id = $id";
     $statement = $db->prepare($query);
     $statement->execute();
     $quote = $db->prepare("SELECT * FROM quote WHERE id = $id");
