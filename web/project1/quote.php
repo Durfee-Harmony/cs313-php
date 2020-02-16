@@ -27,6 +27,7 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $page .= "<p><strong>Category: $cat</strong></p>";
   $page .= "<a class='button' href='update.php?id=$id'>Update</a>";
   $page .= "<a class='button' href='delete.php?id=$id'>Delete</a>";
+  $page .= "<a class='button' href='index.php'>Home</a>";
 }
 
 function detail($page)
