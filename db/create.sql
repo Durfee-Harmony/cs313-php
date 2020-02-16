@@ -8,7 +8,6 @@ CREATE TABLE quote
 , txt       VARCHAR(200)  NOT NULL
 , src       VARCHAR(100)
 , img       VARCHAR(50)
-, author_id INT           NOT NULL REFERENCES author(id)
 );
 
 CREATE TABLE category

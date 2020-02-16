@@ -7,8 +7,8 @@ $quotes->execute();
 
 $page = "<header><h1>All Quotes:</h1>";
 $page .= "<a class='button' href='insert.php?x=q'>Add Quote</a>";
-$page .= "<a class='button' href='insert.php?x=a'>Add Author</a>";
-$page .= "<a class='button' href='insert.php?x=c'>Add Category</a>";
+// $page .= "<a class='button' href='insert.php?x=a'>Add Author</a>";
+// $page .= "<a class='button' href='insert.php?x=c'>Add Category</a>";
 $page .= "<header><div id='quote-div'>";
 
 while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
