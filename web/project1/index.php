@@ -28,6 +28,5 @@ if ($x == NULL) {
 }
 function detail($page)
 {
-  $page;
   include "detail.php";
 }

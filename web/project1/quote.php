@@ -18,7 +18,7 @@ WHERE q.id = :id");
 $quotes->bindValue(':id', $id);
 $quotes->execute();
 
-$page = "";
+$page = " ";
 while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $author = $row["name"];
   $quote = $row["txt"];
