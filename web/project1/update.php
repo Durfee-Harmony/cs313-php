@@ -28,7 +28,7 @@ if ($id == NULL) {
 //   $page .= "<a class='button' href='update.php?id=$id'>Update</a>";
 // }
 
-$page .= "<form method='post' action='data.php?i=q&id=$id'><div>";
+$page = "<form method='post' action='data.php?i=q&id=$id'><div>";
 $page .= "<p>Update Quote Text: </p><input type='text' name='txt' id='txt' required>";
 $page .= "<p>Update Quote Author: </p>";
 $a = authors($db);
