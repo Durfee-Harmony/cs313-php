@@ -103,11 +103,11 @@ function delete($id)
 {
   $db = get_db();
   try {
-    $statement = $db->prepare("DELETE FROM quote WHERE id = $id");
+    $statement = $db->prepare("DELETE FROM quote_category WHERE quote_id = $id");
     $statement->execute();
     $state = $db->prepare("DELETE FROM author_quote WHERE quote_id = $id");
     $state->execute();
-    $s = $db->prepare("DELETE FROM quote_category WHERE quote_id = $id");
+    $s = $db->prepare("DELETE FROM quote WHERE id = $id");
     $s->execute();
     header('Location: index.php');
   } catch (Exception $ex) {
