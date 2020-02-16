@@ -18,7 +18,7 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   if(isset($img)){
     $page .= "<img src='$img' alt='quote'>";
   }
-  $page .= "<a class='quote' href='quote.php?id=$id'>\"$txt\"</a>";
+  $page .= "<a class='quote' href='quote.php?id=$id'>$id: \"$txt\"</a>";
 }
 
 $page .= "</div>";
