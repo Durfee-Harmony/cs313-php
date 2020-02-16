@@ -91,6 +91,21 @@ function update($id, $txt, $author, $cat)
   }
 }
 
+function delete($id)
+{
+  $db = get_db();
+  try {
+    $statement = $db->prepare("DELETE FROM quote WHERE id = $id");
+    $statement->execute();
+    $state = $db->prepare("DELETE FROM author_quote WHERE quote_id = $id");
+    $state->execute();
+    $s = $db->prepare("DELETE FROM quote_category WHERE quote_id = $id");
+    $s->execute();
+  } catch (Exception $ex) {
+    echo "Error with DB. Details: $ex";
+  }
+}
+
 $i = filter_input(INPUT_POST, 'i');
 if ($i == NULL) {
   $i = filter_input(INPUT_GET, 'i');
@@ -108,4 +123,8 @@ if ($i == 'q') {
   $author = filter_input(INPUT_POST, 'author_select');
   $cat = filter_input(INPUT_POST, 'category_select');
   update($id, $txt, $author, $cat);
+} else if ($i == 'd') {
+  echo " delete ";
+  $id = filter_input(INPUT_GET, 'id');
+  delete($id);
 }
