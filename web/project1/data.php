@@ -69,13 +69,14 @@ if ($i == NULL) {
 }
 
 if ($i == 'q') {
-  $q = addQuote($db);
-  if ($q) {
-    $quote = $db->prepare("SELECT MAX(id) FROM quote");
-    $quote->execute();
-    while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
-      $quote_id = $row["id"];
-      header("Location: quote.php/?id=$quote_id");
-    }
-  }
+  echo "add quote";
+  // $q = addQuote($db);
+  // if ($q) {
+  //   $quote = $db->prepare("SELECT MAX(id) FROM quote");
+  //   $quote->execute();
+  //   while ($row = $quote->fetch(PDO::FETCH_ASSOC)) {
+  //     $quote_id = $row["id"];
+  //     header("Location: quote.php/?id=$quote_id");
+  //   }
+  // }
 }
