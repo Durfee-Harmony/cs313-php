@@ -2,6 +2,16 @@
 require_once "dbConnect.php";
 $db = get_db();
 
+$x = filter_input(INPUT_POST, 'x');
+if ($x == NULL) {
+  $x = filter_input(INPUT_GET, 'x');
+}
+
+function detail($page){
+  $page;
+  include "detail.php";
+}
+
 $quotes = $db->prepare("SELECT id, txt, img FROM quote");
 $quotes->execute();
 

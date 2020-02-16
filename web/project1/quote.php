@@ -1,6 +1,7 @@
 <?php
 require_once "dbConnect.php";
 $db = get_db();
+require_once "index.php";
 
 $id = filter_input(INPUT_POST, 'id');
 if ($id == NULL) {
@@ -29,4 +30,4 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $page .= "<a class='button' href='delete.php?id=$id'>Delete</a>";
 }
 
-include "detail.php";
+detail($page);
