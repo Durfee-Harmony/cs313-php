@@ -42,7 +42,7 @@ function addQuote($db)
   $author_id = $a["id"];
 
   try {
-    $query = "INSERT INTO quote (txt, author_id) VALUES (\"$txt\", $author_id);";
+    $query = "INSERT INTO quote (txt) VALUES (\"$txt\");";
     $statement = $db->prepare($query);
     $statement->execute();
     $quote = $db->prepare("SELECT MAX(id) FROM quote");
@@ -67,6 +67,7 @@ $i = filter_input(INPUT_POST, 'i');
 if ($i == NULL) {
   $i = filter_input(INPUT_GET, 'i');
 }
+
 if ($i == 'q') {
   $q = addQuote($db);
   if ($q) {

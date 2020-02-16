@@ -20,7 +20,6 @@ if ($x == 'q') {
 	$page .= $c;
 	$page .= "</div><br><input type='submit' class='button' name='submit' value='Add Quote'>";
 	$page .= "<input type='hidden' name='i' value='q'></form>";
-	$page .= "quote";
 } else if ($x == 'a') {
 	$page .= "author";
 } else if ($x == 'c') {
