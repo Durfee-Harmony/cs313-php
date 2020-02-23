@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Quote Database</title>
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="Harmony Durfee">
   <meta name="description" content="This is a project for web engineering 2.">

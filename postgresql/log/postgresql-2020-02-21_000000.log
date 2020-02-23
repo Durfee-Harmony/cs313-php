@@ -1,0 +1,7 @@
+2020-02-21 11:47:37.794 MST [6624] LOG:  received fast shutdown request
+2020-02-21 11:47:37.800 MST [6624] LOG:  aborting any active transactions
+2020-02-21 11:47:37.807 MST [1384] ERROR:  canceling statement due to user request
+2020-02-21 11:47:37.807 MST [2056] ERROR:  canceling statement due to user request
+2020-02-21 11:47:37.846 MST [6624] LOG:  background worker "logical replication launcher" (PID 1384) exited with exit code 1
+2020-02-21 11:47:37.891 MST [6120] LOG:  shutting down
+2020-02-21 11:47:37.988 MST [6624] LOG:  database system is shut down
