@@ -21,15 +21,15 @@ $s->execute();
 $row = $s->fetch(PDO::FETCH_ASSOC);
 $txt = $row["txt"];
 
-$page = "<form method='post' action='data.php?i=d&id=$id' id='quote-form'><div>";
-$page .= "<p>Update Quote Text: </p><input type='text' name='txt' id='txt' value='$txt' readonly>";
-$page .= "<p>Update Quote Author: </p>";
+$page = "<form method='post' action='data.php?i=d&id=$id' id='quote-form'><div class='q'>";
+$page .= "<p class='q'>Update Quote Text: </p><input type='text' name='txt' id='txt' value='$txt' readonly>";
+$page .= "<p class='q'>Update Quote Author: </p>";
 $a = authors($db, $a);
 $page .= $a;
-$page .= "<p>Update Quote Category: </p>";
+$page .= "<p class='q'>Update Quote Category: </p>";
 $c = categories($db, $c);
 $page .= $c;
-$page .= "</div><br><input type='submit' class='button' name='submit' value='Delete Quote'>";
+$page .= "</div><br><input type='submit' class='button q' name='submit' value='Delete Quote'>";
 $page .= "<input type='hidden' name='i' value='d'></form>";
 
 include "detail.php";
