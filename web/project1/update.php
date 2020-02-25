@@ -33,7 +33,13 @@ $page .= $c;
 $page .= "</div><br><input type='submit' class='button q' name='submit' value='Update Quote'>";
 $page .= "<input type='hidden' name='i' value='u'></form></div>";
 
-include "detail.php";
+function detail($page)
+{
+  $page;
+  include "detail.php";
+}
+
+detail($page);
 
 
 // $quotes = $db->prepare("SELECT * FROM quote q

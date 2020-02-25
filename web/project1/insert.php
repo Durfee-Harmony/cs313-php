@@ -30,4 +30,10 @@ if ($x == 'q') {
 	// $page .= "<a class='button' href='insert.php?x=c'>Add Category</a>";
 }
 
-include "detail.php";
+function detail($page)
+{
+	$page;
+	include "detail.php";
+}
+
+detail($page);
