@@ -21,7 +21,7 @@ $s->execute();
 $row = $s->fetch(PDO::FETCH_ASSOC);
 $txt = $row["txt"];
 
-$page = "<form method='post' action='data.php?i=d&id=$id' id='quote-form'><div class='q'>";
+$page = "<form method='post' action='data.php?i=d&id=$id' id='quote-form'><div>";
 $page .= "<p class='q'>Update Quote Text: </p><input type='text' name='txt' id='txt' value='$txt' readonly>";
 $page .= "<p class='q'>Update Quote Author: </p>";
 $a = authors($db, $a);
