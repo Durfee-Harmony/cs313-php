@@ -19,10 +19,10 @@ div#quote-div {
   line-height: 3em;
   text-align: center;
   font-size: 1.2em;
-  display: inline-grid;
+  display: inline-block;
 }
 
-div#quote-div>p, div#quote-div>a {
+div#quote-div p, div#quote-div a {
   margin: 0;
 }
 
