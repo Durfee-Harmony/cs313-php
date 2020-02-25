@@ -22,6 +22,10 @@ div#quote-div {
   display: inline-grid;
 }
 
+div#quote-div>p, div#quote-div>a {
+  margin: 0;
+}
+
 a.button:link {
   font-family: 'Poppins',
     sans-serif;
