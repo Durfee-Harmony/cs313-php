@@ -22,7 +22,7 @@ div#quote-div {
   display: inline-block;
 }
 
-div#quote-div > h3, div#quote-div > p, div#quote-div > a {
+div#quote-div.q {
   margin: 0;
   padding: 0;
 }

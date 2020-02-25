@@ -22,12 +22,12 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $author = $row["name"];
   $quote = $row["txt"];
   $cat = $row["cat"];
-  $page .= "<br><h3>Author: $author</h3>";
-  $page .= "<p>\"$quote\"</p>";
-  $page .= "<p><strong>Category: $cat</strong></p>";
-  $page .= "<a class='button' href='update.php?id=$id'>Update</a>";
-  $page .= "<a class='button' href='delete.php?id=$id'>Delete</a>";
-  $page .= "<a class='button' href='index.php'>Home</a>";
+  $page .= "<br><h3 class='q'>Author: $author</h3>";
+  $page .= "<p class='q'>\"$quote\"</p>";
+  $page .= "<p class='q'><strong>Category: $cat</strong></p>";
+  $page .= "<a class='button q' href='update.php?id=$id'>Update</a>";
+  $page .= "<a class='button q' href='delete.php?id=$id'>Delete</a>";
+  $page .= "<a class='button q' href='index.php'>Home</a>";
 }
 $page .= "</div>";
 
