@@ -17,7 +17,7 @@ WHERE q.id = :id");
 $quotes->bindValue(':id', $id);
 $quotes->execute();
 
-$page = " ";
+$page = "<div id='quote-div'>";
 while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $author = $row["name"];
   $quote = $row["txt"];
@@ -29,6 +29,7 @@ while ($row = $quotes->fetch(PDO::FETCH_ASSOC)) {
   $page .= "<a class='button' href='delete.php?id=$id'>Delete</a>";
   $page .= "<a class='button' href='index.php'>Home</a>";
 }
+$page .= "</div>";
 
 function detail($page)
 {
