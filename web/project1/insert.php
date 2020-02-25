@@ -10,7 +10,7 @@ if ($x == NULL) {
 
 $page = "";
 if ($x == 'q') {
-	$page .= "<form method='post' action='data.php?i=q'><div>";
+	$page .= "<form method='post' action='data.php?i=q' id='quote-form'><div>";
 	$page .= "<p>Enter Quote Text: </p><input type='text' name='txt' id='txt' required>";
 	$page .= "<p>Choose Quote Author: </p>";
 	$a = authors($db, null);

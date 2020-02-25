@@ -22,7 +22,7 @@ div#quote-div {
   display: grid;
 }
 
-div#quote {
+div#quote, form#quote-form {
   background-color: #6D8DA0;
   line-height: 3em;
   text-align: center;
