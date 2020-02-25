@@ -21,7 +21,8 @@ $s->execute();
 $row = $s->fetch(PDO::FETCH_ASSOC);
 $txt = $row["txt"];
 
-$page = "<form method='post' action='data.php?i=u&id=$id' id='quote-form'><div>";
+$page = "<div id='quote'>";
+$page .= "<form method='post' action='data.php?i=u&id=$id' id='quote-form'><div>";
 $page .= "<p class='q'>Update Quote Text: </p><input type='text' name='txt' id='txt' value='$txt' required>";
 $page .= "<p class='q'>Update Quote Author: </p>";
 $a = authors($db, $a);
@@ -30,7 +31,7 @@ $page .= "<p class='q'>Update Quote Category: </p>";
 $c = categories($db, $c);
 $page .= $c;
 $page .= "</div><br><input type='submit' class='button q' name='submit' value='Update Quote'>";
-$page .= "<input type='hidden' name='i' value='u'></form>";
+$page .= "<input type='hidden' name='i' value='u'></form></div>";
 
 include "detail.php";
 
