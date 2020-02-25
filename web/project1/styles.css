@@ -22,8 +22,9 @@ div#quote-div {
   display: inline-block;
 }
 
-div#quote-div p, div#quote-div a {
+div#quote-div > h3, div#quote-div > p, div#quote-div > a {
   margin: 0;
+  padding: 0;
 }
 
 a.button:link {
