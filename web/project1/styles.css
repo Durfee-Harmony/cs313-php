@@ -35,7 +35,7 @@ div#quote, form#quote-form {
   padding: 0;
 }
 
-a.button:link, input.button {
+a.button:link, input.button:link {
   font-family: 'Poppins',
     sans-serif;
   text-decoration: none;
