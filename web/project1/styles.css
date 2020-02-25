@@ -19,6 +19,14 @@ div#quote-div {
   line-height: 3em;
   text-align: center;
   font-size: 1.2em;
+  display: grid;
+}
+
+div#quote-div {
+  background-color: #6D8DA0;
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.2em;
   display: inline-block;
 }
 
