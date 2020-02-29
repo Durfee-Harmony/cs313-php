@@ -7,8 +7,4 @@
 
 --   SELECT * FROM category;
 
-DELETE FROM quote WHERE id = 6;
-DELETE FROM author_quote WHERE quote_id = 6;
-DELETE FROM quote_category WHERE quote_id = 6;
-
 SELECT * FROM quote;

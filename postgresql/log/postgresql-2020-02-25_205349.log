@@ -1,0 +1,6 @@
+2020-02-25 20:53:56.350 MST [10328] LOG:  database system was interrupted; last known up at 2020-02-21 11:53:16 MST
+2020-02-25 20:53:57.404 MST [10328] LOG:  database system was not properly shut down; automatic recovery in progress
+2020-02-25 20:53:57.415 MST [10328] LOG:  redo starts at 0/1650C10
+2020-02-25 20:53:57.417 MST [10328] LOG:  invalid record length at 0/1650CF8: wanted 24, got 0
+2020-02-25 20:53:57.419 MST [10328] LOG:  redo done at 0/1650CC0
+2020-02-25 20:53:57.463 MST [6812] LOG:  database system is ready to accept connections
