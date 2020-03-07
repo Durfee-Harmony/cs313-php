@@ -1,4 +1,4 @@
-console.log('app.js running!');
+console.log('index.js running!');
 var http = require('http');
 var request = function onRequest(req){
   http.createServer(function (req, res) {
