@@ -9,8 +9,27 @@ app.get('/', function (req, res) {
 });
 
 app.get('/quotes', function (req, res) {
+  res.writeHead(200, {
+    'Content-Type': 'application/json'
+  });
+  var student = {
+    name: 'Harmony',
+    class: 'cs313'
+  }
+  res.end(JSON.stringify(student));
   res.render('quotes');
 });
+
+var pgp = require('pg-promise')
+var db = pgp('postgres://username:password@host:port/database')
+db.one('SELECT * FROM quotes')
+  .then(function (data) {
+    console.log('DATA:', data.value)
+  })
+  .catch(function (error) {
+    console.log('ERROR:', error)
+  });
+
 // app.get('/detail', function (req, res) {
 //   res.send('id: ' + req.query.id);
 //   res.render('detail', {

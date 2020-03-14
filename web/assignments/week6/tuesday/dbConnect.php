@@ -7,6 +7,7 @@ function get_db() {
 			$dbUrl = "postgres://ta_user:ta_pass@localhost:5432/scripture_ta";
 		}
 		$dbopts = parse_url($dbUrl);
+		var_dump($dbopts);
 		$dbHost = $dbopts["host"];
 		$dbPort = $dbopts["port"];
 		$dbUser = $dbopts["user"];
