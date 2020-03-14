@@ -20,8 +20,11 @@ app.get('/quotes', function (req, res) {
   res.render('quotes');
 });
 
-var pgp = require('pg-promise')
-var db = pgp('postgres://lpdzdeczvntfek:c870d329c80fb6b49f55f425360e16bc9465fb10de5601ff67a60b61abe900f8@ec2-34-193-42-173.compute-1.amazonaws.com:5432/d3b0o3nhe1tsra')
+const pgp = require('pg-promise')();
+const connection = {
+  connectionString: 'postgres://lpdzdeczvntfek:c870d329c80fb6b49f55f425360e16bc9465fb10de5601ff67a60b61abe900f8@ec2-34-193-42-173.compute-1.amazonaws.com:5432/d3b0o3nhe1tsra'
+};
+const db = pgp(connection);
 db.one('SELECT * FROM quotes')
   .then(function (data) {
     console.log('DATA:', data.value)
@@ -29,6 +32,8 @@ db.one('SELECT * FROM quotes')
   .catch(function (error) {
     console.log('ERROR:', error)
   });
+
+// postgres://lpdzdeczvntfek:c870d329c80fb6b49f55f425360e16bc9465fb10de5601ff67a60b61abe900f8@ec2-34-193-42-173.compute-1.amazonaws.com:5432/d3b0o3nhe1tsra
 
 // app.get('/detail', function (req, res) {
 //   res.send('id: ' + req.query.id);
