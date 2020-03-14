@@ -21,7 +21,7 @@ app.get('/quotes', function (req, res) {
 });
 
 var pgp = require('pg-promise')
-var db = pgp('postgres://username:password@host:port/database')
+var db = pgp('postgres://lpdzdeczvntfek:c870d329c80fb6b49f55f425360e16bc9465fb10de5601ff67a60b61abe900f8@ec2-34-193-42-173.compute-1.amazonaws.com:5432/d3b0o3nhe1tsra')
 db.one('SELECT * FROM quotes')
   .then(function (data) {
     console.log('DATA:', data.value)
