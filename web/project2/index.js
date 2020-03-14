@@ -20,12 +20,20 @@ app.get('/quotes', function (req, res) {
   res.render('quotes');
 });
 
-const pgp = require('pg-promise')();
-const connection = {
-  connectionString: 'postgres://lpdzdeczvntfek:c870d329c80fb6b49f55f425360e16bc9465fb10de5601ff67a60b61abe900f8@ec2-34-193-42-173.compute-1.amazonaws.com:5432/d3b0o3nhe1tsra'
+const initOptions = {
+  query(e) {
+    console.log('QUERY:', e.query);
+  }
 };
-const db = pgp(connection);
-db.one('SELECT * FROM quotes')
+const pgp = require('pg-promise')(initOptions);
+var connect = {
+  connectionString: 'postgres://lpdzdeczvntfek:c870d329c80fb6b49f55f425360e16bc9465fb10de5601ff67a60b61abe900f8@ec2-34-193-42-173.compute-1.amazonaws.com:5432/d3b0o3nhe1tsra',
+  ssl: true,
+  sslmode: require,
+  rejectUnauthorized: true
+}
+const db = pgp(connect);
+db.one('SELECT txt FROM quote WHERE id = 1')
   .then(function (data) {
     console.log('DATA:', data.value)
   })
