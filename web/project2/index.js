@@ -8,16 +8,13 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-var results;
 const initOptions = {
   query(e) {
-    console.log('QUERY:', e.query);
+    // console.log('QUERY:', e.query);
   },
   receive(data, result, e) {
-    results = camelizeColumns(data);
-    console.log('DATA:', results);
-    results = camelizeColumns(result);
-    console.log('RESULT:', results);
+    var d = camelizeColumns(data);
+    // console.log('DATA:', d);
   }
 };
 const pgp = require('pg-promise')(initOptions);
@@ -28,14 +25,27 @@ var connect = {
   rejectUnauthorized: true
 }
 const db = pgp(connect);
-db.one('SELECT COUNT(*) FROM quote')
-  .catch(function (error) {
-    console.log('ERROR:', error)
-  });
-db.any('SELECT * FROM quote')
-  .catch(function (error) {
-    console.log('ERROR:', error)
-  });
+
+function allQuotes() {
+  var result;
+  db.one('SELECT COUNT(*) FROM quote')
+    .then(function (data) {
+      var d = JSON.stringify(data);
+      var c = JSON.parse(d).count;
+      for (var i = 1; i <= c; i++) {
+        db.any('SELECT * FROM quote WHERE id = $1', i)
+          .then(function (data) {
+            result += JSON.stringify(data);
+            if (i = c) {
+              return result;
+            }
+          })
+      }
+    })
+    .catch(function (error) {
+      console.log('ERROR:', error)
+    });
+}
 
 function camelizeColumns(data) {
   const tmp = data[0];
@@ -53,11 +63,11 @@ function camelizeColumns(data) {
 }
 
 app.get('/quotes', function (req, res) {
-  res.writeHead(200, {
-    'Content-Type': 'application/json'
+  var quotes = allQuotes();
+  res.end();
+  res.render('quotes', {
+    data: quotes
   });
-  res.end(JSON.stringify(results));
-  res.render('quotes');
 });
 
 // app.get('/detail', function (req, res) {
