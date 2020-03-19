@@ -8,44 +8,16 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
+var d;
 const initOptions = {
   query(e) {
     // console.log('QUERY:', e.query);
   },
   receive(data, result, e) {
-    var d = camelizeColumns(data);
-    // console.log('DATA:', d);
+    d = camelizeColumns(data);
+    var h = hate(d);
   }
 };
-const pgp = require('pg-promise')(initOptions);
-var connect = {
-  connectionString: 'postgres://lpdzdeczvntfek:c870d329c80fb6b49f55f425360e16bc9465fb10de5601ff67a60b61abe900f8@ec2-34-193-42-173.compute-1.amazonaws.com:5432/d3b0o3nhe1tsra',
-  ssl: true,
-  sslmode: require,
-  rejectUnauthorized: true
-}
-const db = pgp(connect);
-
-function allQuotes() {
-  var result;
-  db.one('SELECT COUNT(*) FROM quote')
-    .then(function (data) {
-      var d = JSON.stringify(data);
-      var c = JSON.parse(d).count;
-      for (var i = 1; i <= c; i++) {
-        db.any('SELECT * FROM quote WHERE id = $1', i)
-          .then(function (data) {
-            result += JSON.stringify(data);
-            if (i = c) {
-              return result;
-            }
-          })
-      }
-    })
-    .catch(function (error) {
-      console.log('ERROR:', error)
-    });
-}
 
 function camelizeColumns(data) {
   const tmp = data[0];
@@ -62,9 +34,43 @@ function camelizeColumns(data) {
   return tmp;
 }
 
+function hate(data) {
+  console.log("HATE:", data);
+  d += JSON.stringify(data);
+  console.log("D:", d);
+  return d;
+}
+
+const pgp = require('pg-promise')(initOptions);
+var connect = {
+  connectionString: 'postgres://lpdzdeczvntfek:c870d329c80fb6b49f55f425360e16bc9465fb10de5601ff67a60b61abe900f8@ec2-34-193-42-173.compute-1.amazonaws.com:5432/d3b0o3nhe1tsra',
+  ssl: true,
+  sslmode: require,
+  rejectUnauthorized: true
+}
+const db = pgp(connect);
+db.one('SELECT COUNT(*) FROM quote')
+  .then(function (data) {
+    var d = JSON.stringify(data);
+    var c = JSON.parse(d).count;
+    for (var i = 1; i <= c; i++) {
+      db.any('SELECT * FROM quote WHERE id = $1', i)
+        .then(function (d) {
+          result += JSON.stringify(d);
+          if (i = c) {
+            // return result;
+          }
+        })
+    }
+  })
+  .catch(function (error) {
+    console.log('ERROR:', error)
+  });
+
 app.get('/quotes', function (req, res) {
-  var quotes = allQuotes();
-  res.end();
+  var quotes = d;
+  console.log("D:", d);
+  console.log("QUOTES:", quotes);
   res.render('quotes', {
     data: quotes
   });
@@ -94,3 +100,31 @@ app.get('*', function (req, res) {
 //   res.write('<script src="index.js"></script>');
 //   res.end();
 // }).listen(8080);
+
+
+
+
+// function allQuotes() {
+//   var result;
+//   db.one('SELECT COUNT(*) FROM quote')
+//     .then(function (data) {
+//       var d = JSON.stringify(data);
+//       var c = JSON.parse(d).count;
+//       for (var i = 1; i <= c; i++) {
+//         db.any('SELECT * FROM quote WHERE id = $1', i)
+//           .then(function (d) {
+//             result += JSON.stringify(d);
+//             console.log("D:", result);
+//             var r = JSON.parse(result);
+//             console.log("R:", r);
+//             if (i = c) {
+//               // console.log("RESULT:", result);
+//               return "this should hold all quotes";
+//             }
+//           })
+//       }
+//     })
+//     .catch(function (error) {
+//       console.log('ERROR:', error)
+//     });
+// }
