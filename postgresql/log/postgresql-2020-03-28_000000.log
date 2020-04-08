@@ -1,0 +1,5 @@
+2020-03-28 14:18:11.254 MDT [6360] LOG:  received fast shutdown request
+2020-03-28 14:18:11.260 MDT [6360] LOG:  aborting any active transactions
+2020-03-28 14:18:11.280 MDT [6360] LOG:  background worker "logical replication launcher" (PID 2532) exited with exit code 1
+2020-03-28 14:18:11.290 MDT [7540] LOG:  shutting down
+2020-03-28 14:18:11.343 MDT [6360] LOG:  database system is shut down

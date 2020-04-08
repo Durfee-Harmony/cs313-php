@@ -1,0 +1,6 @@
+2020-04-07 12:46:47.697 MDT [6556] LOG:  database system was interrupted; last known up at 2020-03-30 16:54:15 MDT
+2020-04-07 12:46:48.284 MDT [6556] LOG:  database system was not properly shut down; automatic recovery in progress
+2020-04-07 12:46:48.289 MDT [6556] LOG:  redo starts at 0/16512E8
+2020-04-07 12:46:48.290 MDT [6556] LOG:  invalid record length at 0/16513D0: wanted 24, got 0
+2020-04-07 12:46:48.292 MDT [6556] LOG:  redo done at 0/1651398
+2020-04-07 12:46:48.345 MDT [6136] LOG:  database system is ready to accept connections

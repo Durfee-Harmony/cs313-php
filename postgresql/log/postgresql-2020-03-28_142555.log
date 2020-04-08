@@ -1,0 +1,9 @@
+2020-03-28 14:25:55.383 MDT [3296] LOG:  database system was shut down at 2020-03-28 14:23:56 MDT
+2020-03-28 14:25:55.417 MDT [22924] LOG:  database system is ready to accept connections
+2020-03-28 14:27:28.499 MDT [22924] LOG:  received fast shutdown request
+2020-03-28 14:27:28.500 MDT [15720] ERROR:  canceling statement due to user request
+2020-03-28 14:27:28.504 MDT [22924] LOG:  aborting any active transactions
+2020-03-28 14:27:28.507 MDT [20296] ERROR:  canceling statement due to user request
+2020-03-28 14:27:28.523 MDT [22924] LOG:  background worker "logical replication launcher" (PID 15720) exited with exit code 1
+2020-03-28 14:27:28.587 MDT [16052] LOG:  shutting down
+2020-03-28 14:27:28.771 MDT [22924] LOG:  database system is shut down

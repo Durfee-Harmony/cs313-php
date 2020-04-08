@@ -1,0 +1,7 @@
+2020-03-28 14:20:09.752 MDT [10652] LOG:  database system was shut down at 2020-03-28 14:18:11 MDT
+2020-03-28 14:20:09.800 MDT [16496] LOG:  database system is ready to accept connections
+2020-03-28 14:23:56.430 MDT [16496] LOG:  received fast shutdown request
+2020-03-28 14:23:56.435 MDT [16496] LOG:  aborting any active transactions
+2020-03-28 14:23:56.453 MDT [16496] LOG:  background worker "logical replication launcher" (PID 10804) exited with exit code 1
+2020-03-28 14:23:56.461 MDT [14436] LOG:  shutting down
+2020-03-28 14:23:56.498 MDT [16496] LOG:  database system is shut down
